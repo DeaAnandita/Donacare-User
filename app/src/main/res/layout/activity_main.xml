@@ -36,11 +36,12 @@
         app:layout_constraintVertical_bias="0.146" />
 
     <EditText
+        android:id="@+id/email"
         android:layout_width="365dp"
         android:layout_height="62dp"
         android:background="@drawable/input_field"
         android:fontFamily="@font/regular"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="text"
         android:textColor="#707070"
         android:textSize="15sp"
@@ -54,6 +55,7 @@
         app:layout_constraintVertical_bias="0.297" />
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="365dp"
         android:layout_height="62dp"
         android:background="@drawable/input_field"
@@ -97,6 +99,7 @@
         app:layout_constraintVertical_bias="0.487" />
 
     <Button
+        android:id="@+id/btnLogin"
         android:layout_width="365dp"
         android:layout_height="62dp"
         android:background="@drawable/button_custom"
