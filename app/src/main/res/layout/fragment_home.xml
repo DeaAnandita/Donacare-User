@@ -1,19 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <SearchView
+        android:id="@+id/simpleSearchView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/regular"
-        android:text="Home Fragment"
-        android:textColor="#332A2A"
-        android:textSize="27sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginHorizontal="20dp"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/search"
+        android:layout_marginTop="20dp"
+        android:queryHint="Search Here"
+        />
+
+    <RelativeLayout
+        android:id="@+id/slidehome"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@+id/simpleSearchView">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"/>
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListHome"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slidehome"
+        android:layout_marginTop="40dp"
+        tools:listitem="@layout/list_item"
+        android:layout_marginHorizontal="20dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

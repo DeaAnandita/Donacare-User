@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.donacare">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Donacare">
-        <activity android:name=".Search"></activity>
-        <activity android:name=".SplashScreen"></activity>
-        <activity android:name=".Home" >
+        <activity android:name=".InputDonasiActivity"></activity>
+        <activity android:name=".DetailHome" />
+        <activity android:name=".HomeAdapter" />
+        <activity android:name=".Search" />
+        <activity android:name=".SplashScreen" />
+        <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Register" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

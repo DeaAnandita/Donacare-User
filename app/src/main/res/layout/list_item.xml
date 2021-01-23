@@ -28,7 +28,7 @@
                 android:layout_height="151dp"
                 android:gravity="center"
                 android:padding="5dp"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/img" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtNama"
+                    android:id="@+id/txtTitle"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                     android:text="title"/>
 
                 <TextView
-                    android:id="@+id/txtHarga"
+                    android:id="@+id/txtSubtitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
