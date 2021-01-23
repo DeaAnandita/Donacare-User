@@ -25,19 +25,30 @@
         />
 
     <RelativeLayout
+        android:id="@+id/slidehome"
         android:layout_width="match_parent"
-        android:layout_height="170dp">
+        android:layout_height="170dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@+id/simpleSearchView">
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/pager"
-            android:layout_alignParentTop="true"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="170dp"/>
         <me.relex.circleindicator.CircleIndicator
             android:id="@+id/indicator"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="48dp"/>
     </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slidehome"
+        android:layout_marginTop="40dp"
+        tools:listitem="@layout/list_item"
+        android:layout_marginHorizontal="20dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btn_navigation"
@@ -47,7 +58,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="11dp"
         android:background="@drawable/bottom_background"
-        app:backgroundTint="@null"
         app:itemIconTint="@drawable/color_selector"
         app:itemTextColor="@drawable/color_selector"
         app:menu="@menu/bottom_navigation" />
