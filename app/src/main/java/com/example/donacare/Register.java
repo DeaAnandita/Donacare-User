@@ -29,12 +29,12 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         getSupportActionBar().hide();
         tvLogin = findViewById(R.id.tvLogin);
-        tvForgotPassword = findViewById(R.id.tvForgotPassword);
+        tvForgotPassword = findViewById(R.id.txtLupaPasswordRegis);
         btnRegister = findViewById(R.id.btnRegister);
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-        email = findViewById(R.id.email);
-        phone = findViewById(R.id.phone);
+        username = findViewById(R.id.etUsername);
+        password = findViewById(R.id.etPassword);
+        email = findViewById(R.id.etEmail);
+        phone = findViewById(R.id.etPhone);
         fAuth = FirebaseAuth.getInstance();
 
         if(fAuth.getCurrentUser() != null){
