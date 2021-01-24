@@ -27,12 +27,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
         btnLogin = findViewById(R.id.btnLogin);
         email = findViewById(R.id.etEmail);
         password = findViewById(R.id.etPassword);
         fAuth = FirebaseAuth.getInstance();
         tvRegister = findViewById(R.id.tvRegister);
+
+        if(fAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(), Home.class));
+            finish();
+        }
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

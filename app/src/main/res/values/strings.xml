@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Donacare</string>
+
+    <string-array name="PilihanDonasi">
+        <item>Donasi Barang</item>
+        <item>Donasi Dana</item>
+    </string-array>
 </resources>

@@ -27,7 +27,6 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        getSupportActionBar().hide();
         tvLogin = findViewById(R.id.tvLogin);
         tvForgotPassword = findViewById(R.id.txtLupaPasswordRegis);
         btnRegister = findViewById(R.id.btnRegister);
