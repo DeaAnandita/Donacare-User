@@ -4,16 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    tools:context=".Home">
+    android:background="@color/white"
+    tools:context=".UI.Home">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_navigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btn_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="11dp"
         android:background="@drawable/bottom_background"
-        app:backgroundTint="@null"
         app:itemIconTint="@drawable/color_selector"
         app:itemTextColor="@drawable/color_selector"
         app:menu="@menu/bottom_navigation" />

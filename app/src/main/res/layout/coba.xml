@@ -19,7 +19,6 @@
         android:layout_alignParentRight="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/logo2"
-        android:scaleType="fitXY"/>
+        android:src="@drawable/logo2"/>
 
 </RelativeLayout>
