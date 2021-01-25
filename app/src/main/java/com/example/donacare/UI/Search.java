@@ -1,8 +1,10 @@
-package com.example.donacare;
+package com.example.donacare.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.donacare.R;
 
 public class Search extends AppCompatActivity {
 

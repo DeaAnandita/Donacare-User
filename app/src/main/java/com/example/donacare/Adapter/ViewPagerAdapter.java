@@ -3,16 +3,12 @@ package com.example.donacare.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
-import com.example.donacare.HomeFragment;
-import com.example.donacare.R;
-import com.google.firebase.database.core.Context;
+import com.example.donacare.Fragment.HomeFragment;
 
 public class ViewPagerAdapter extends PagerAdapter {
     int[] img;

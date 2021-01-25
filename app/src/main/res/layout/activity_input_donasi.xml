@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/white"
-        tools:context=".InputDonasiActivity">
+        tools:context=".UI.InputDonasiActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarInput"

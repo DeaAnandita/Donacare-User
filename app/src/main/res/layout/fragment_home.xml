@@ -22,8 +22,7 @@
         android:iconifiedByDefault="false"
         android:background="@drawable/search"
         android:layout_marginTop="20dp"
-        android:queryHint="Search Here"
-        />
+        android:queryHint="Search Here" />
 
     <RelativeLayout
         android:id="@+id/slidehome"
@@ -51,7 +50,9 @@
         android:layout_below="@+id/slidehome"
         android:layout_marginTop="40dp"
         tools:listitem="@layout/list_item"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_marginHorizontal="20dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
         </RelativeLayout>
     </ScrollView>

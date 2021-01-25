@@ -1,9 +1,15 @@
 package com.example.donacare.Model;
 
 public class HomeModel {
-
     String id;
     String title;
+    String subtitle;
+
+    public HomeModel(String id, String title, String subtitle) {
+        this.id = id;
+        this.title = title;
+        this.subtitle = subtitle;
+    }
 
     public String getId() {
         return id;
@@ -29,6 +35,6 @@ public class HomeModel {
         this.subtitle = subtitle;
     }
 
-    String subtitle;
+
 
 }

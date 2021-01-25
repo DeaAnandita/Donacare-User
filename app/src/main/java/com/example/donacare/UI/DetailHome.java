@@ -1,14 +1,16 @@
-package com.example.donacare;
+package com.example.donacare.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class InputDonasiActivity extends AppCompatActivity {
+import com.example.donacare.R;
+
+public class DetailHome extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_donasi);
+        setContentView(R.layout.activity_detail_home);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.donacare.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.donacare.Model.HomeModel;
 import com.example.donacare.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder>{
@@ -19,7 +21,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     private List<HomeModel> dataList;
     View viewku;
 
-    public HomeAdapter(List<HomeModel> dataList) {
+    public HomeAdapter( List<HomeModel> dataList) {
         this.dataList = dataList;
     }
 

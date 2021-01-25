@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Donacare">
-        <activity android:name=".InputDonasiActivity">
+        <activity android:name=".UI.InputDonasiActivity">
 
         </activity>
-        <activity android:name=".DetailHome" />
-        <activity android:name=".Search" />
-        <activity android:name=".SplashScreen" />
-        <activity android:name=".Home">
+        <activity android:name=".UI.DetailHome" />
+        <activity android:name=".UI.Search" />
+        <activity android:name=".UI.SplashScreen" />
+        <activity android:name=".UI.Home">
 
         </activity>
-        <activity android:name=".Register" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".UI.Register" />
+        <activity android:name=".UI.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
