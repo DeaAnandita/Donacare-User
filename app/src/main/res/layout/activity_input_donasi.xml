@@ -122,11 +122,11 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btn_foto"
+            android:id="@+id/btn_inputFoto_inputDonasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/btn_wa"
             android:text="Foto Barang"
             android:textColor="@color/white" />
 
@@ -135,7 +135,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/btn_wa"
             android:text="Kirim"
             android:textColor="@color/white" />
 
