@@ -1,30 +1,42 @@
 package com.example.donacare.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.donacare.Fragment.HomeFragment;
+import com.example.donacare.R;
+
+import java.util.Objects;
 
 public class ViewPagerAdapter extends PagerAdapter {
-    int[] img;
-    LayoutInflater inflater;
-    HomeFragment context;
-    int position = 3;
 
-    public ViewPagerAdapter(HomeFragment homeFragment, int[] img) {
-        this.context = homeFragment;
-        this.img = img;
+    // Context object
+    Context context;
+
+    // Array of images
+    int[] images;
+
+    // Layout Inflater
+    LayoutInflater mLayoutInflater;
+
+    // Viewpager Constructor
+    public ViewPagerAdapter(Context context, int[] images) {
+        this.context = context;
+        this.images = images;
+        mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-
 
     @Override
     public int getCount() {
-        return img.length;
+        // return the number of images
+        return images.length;
     }
 
     @Override
@@ -32,23 +44,27 @@ public class ViewPagerAdapter extends PagerAdapter {
         return view == ((RelativeLayout) object);
     }
 
-//    @NonNull
-//    @Override
-//    public Object instantiateItem(@NonNull ViewGroup container, int position) {
-//        ImageView img;
-//
-////        inflater = (LayoutInflater)context.getSystem
-////        View itemview = inflater.inflate(R.layout.item, container, false);
-////        img = (ImageView) itemview.findViewById(R.id.ima1);
-////        img.setImageResource(flag[position]);
-//
-////        //add item.xml to viewpager
-////        ((ViewPager) container).addView(itemview);
-////        return itemview;
-//    }
+    @NonNull
+    @Override
+    public Object instantiateItem(@NonNull ViewGroup container, final int position) {
+        // inflating the item.xml
+        View itemView = mLayoutInflater.inflate(R.layout.slide, container, false);
+
+        // referencing the image view from the item.xml file
+        ImageView imageView = (ImageView) itemView.findViewById(R.id.ima1);
+
+        // setting the image in the imageView
+        imageView.setImageResource(images[position]);
+
+        // Adding the View
+        Objects.requireNonNull(container).addView(itemView);
+
+        return itemView;
+    }
 
     @Override
-    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        super.destroyItem(container, position, object);
+    public void destroyItem(ViewGroup container, int position, Object object) {
+
+        container.removeView((LinearLayout) object);
     }
 }
