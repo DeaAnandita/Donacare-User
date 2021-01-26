@@ -3,79 +3,117 @@ package com.example.donacare.UI;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.donacare.Model.AccountModel;
+import com.example.donacare.Preferences;
 import com.example.donacare.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
-    EditText email, password;
+    EditText txt_username, txt_password;
     Button btnLogin;
     TextView tvRegister;
-    FirebaseAuth fAuth;
+    DatabaseReference databaseReference;
+    ProgressDialog progressDialog;
+    boolean authUsername, authPassword;
+    Preferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnLogin = findViewById(R.id.btnLogin);
-        email = findViewById(R.id.etEmail);
-        password = findViewById(R.id.etPassword);
-        fAuth = FirebaseAuth.getInstance();
+        txt_username = findViewById(R.id.txt_username_login);
+        txt_password = findViewById(R.id.txt_password_login);
         tvRegister = findViewById(R.id.tvRegister);
 
-        if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(), Home.class));
-            finish();
-        }
+        preferences = new Preferences();
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("users");
+
+        progressDialog = new ProgressDialog(this);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String mEmail = email.getText().toString().trim();
-                String mPassword = password.getText().toString().trim();
+                String username = txt_username.getText().toString();
+                String password = txt_password.getText().toString();
+                boolean correctUsername = false;
+                boolean correctPassword = false;
+                authUsername = false;
+                authPassword = false;
 
-                if(TextUtils.isEmpty(mEmail)){
-                    email.setError("Email tidak boleh kosong.");
-                    return;
+                if (username.trim().isEmpty()) {
+                    txt_username.setError("Username tidak boleh kosong!");
+                } else {
+                    correctUsername = true;
                 }
-                if(TextUtils.isEmpty(mPassword)){
-                    password.setError("Password tidak boleh kosong.");
-                    return;
+                if (password.isEmpty()) {
+                    txt_password.setError("Password tidak boleh kosong!");
+                } else if (password.length() < 6) {
+                    txt_password.setError("Password harus 6 karakter atau lebih");
+                } else {
+                    correctPassword = true;
                 }
-                if(mPassword.length() < 6){
-                    password.setError("Password minimal 6 karakter.");
-                    return;
-                }
-                fAuth.signInWithEmailAndPassword(mEmail, mPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(MainActivity.this, "Login sukses.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), Home.class));
-                        }else{
-                            Toast.makeText(MainActivity.this, "Error! Gagal login." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
+                if (correctUsername && correctPassword) {
+                    progressDialog.setMessage("Loading...");
+                    progressDialog.setCancelable(false);
+                    progressDialog.show();
+                    txt_username.setError(null);
+                    txt_password.setError(null);
+
+                    databaseReference.child(username);
+                    databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            progressDialog.dismiss();
+                            if (snapshot.getValue() != null) {
+                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                    if (username.equals(dataSnapshot.getValue(AccountModel.class).getUsername())) {
+                                        authUsername = true;
+                                    }
+                                    if (password.equals(dataSnapshot.getValue(AccountModel.class).getPassword())) {
+                                        authPassword = true;
+                                    }
+                                }
+                                if (authUsername && authPassword) {
+                                    preferences.setStatus(getApplicationContext(), true);
+                                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Username atau password salah", Toast.LENGTH_SHORT).show();
+                                }
+                            }
                         }
-                    }
-                });
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            progressDialog.dismiss();
+                        }
+                    });
+                }
             }
         });
 
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Register.class));
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
                 finish();
             }
         });

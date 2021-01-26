@@ -4,5 +4,6 @@
     <string-array name="PilihanDonasi">
         <item>Donasi Barang</item>
         <item>Donasi Dana</item>
+        <item>Donasi Jasa</item>
     </string-array>
 </resources>

@@ -31,7 +31,6 @@ import com.example.donacare.Adapter.ViewPagerAdapter;
 import com.example.donacare.Model.HomeModel;
 import com.example.donacare.R;
 import com.example.donacare.UI.DetailHome;
-import com.example.donacare.UI.Home;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -65,6 +64,7 @@ public class HomeFragment extends Fragment {
         circleIndicator = view.findViewById(R.id.indicator);
         mViewPager = view.findViewById(R.id.pager);
         recyclerView = view.findViewById(R.id.rvListHome);
+
 
         btnLhtSelengkapnya = (Button) view.findViewById(R.id.btnLhtSelengkapnya);
         btnLhtSelengkapnya.setOnClickListener(new View.OnClickListener() {

@@ -26,12 +26,12 @@
         android:fontFamily="@font/regular"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/txtLogin"
-        android:text="Silahkan login untuk melanjutkan."
+        android:text="Silakan login untuk melanjutkan."
         android:textColor="#707070"
         android:textSize="15sp"/>
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/txt_username_login"
         android:layout_below="@+id/txtlogin2"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
@@ -39,14 +39,14 @@
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/input_field"
         android:fontFamily="@font/regular"
-        android:hint="Email"
+        android:hint="Username"
         android:inputType="text"
         android:textColorHint="@color/colorAccent"
         android:textColor="@color/colorAccent"
         android:textSize="15sp"/>
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/txt_password_login"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/input_field"
@@ -59,7 +59,7 @@
         android:textSize="15sp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/etEmail"/>
+        android:layout_below="@+id/txt_username_login"/>
 
     <TextView
         android:id="@+id/txtLupaPasswordLogin"
@@ -69,7 +69,7 @@
         android:text="Lupa Password?"
         android:textColor="#332A2A"
         android:textSize="13sp"
-        android:layout_below="@id/etPassword"
+        android:layout_below="@id/txt_password_login"
         android:layout_alignParentRight="true"
         android:layout_marginRight="30dp"
         android:layout_marginTop="10dp"/>
