@@ -56,6 +56,19 @@
         android:layout_marginTop="40dp"/>
 
     <Button
+        android:id="@+id/btn_wa_detailHome"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@+id/btn_donasi_detailHome"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="whatsapp"
+        android:textColor="@color/white"
+        android:drawableLeft="@mipmap/whatsapp"
+         android:background="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_donasi_detailHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
