@@ -17,13 +17,17 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.donacare.Adapter.HomeAdapter;
+import com.example.donacare.Adapter.ViewPagerAdapter;
 import com.example.donacare.Model.HomeModel;
 import com.example.donacare.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+
+import me.relex.circleindicator.CircleIndicator;
 
 public class HomeFragment extends Fragment {
 
@@ -34,16 +38,29 @@ public class HomeFragment extends Fragment {
 
     SearchView searchView;
 
+    ViewPager mViewPager;
+
+    // images array
+    int[] images = {R.drawable.a1, R.drawable.a2};
+
+    // Creating Object of ViewPagerAdapter
+    ViewPagerAdapter mViewPagerAdapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-//        SearchView searchView = (SearchView) view.findViewById(R.id.simpleSearchView);
-//        EditText searchEditText = (EditText) searchView.findViewById(com.google.android.material.R.id.search_src_text);
-//        searchEditText.setTextColor(getResources().getColor(R.color.white));
-//        searchEditText.setHintTextColor(getResources().getColor(R.color.white));
+        mViewPager = view.findViewById(R.id.pager);
 
+        // Initializing the ViewPagerAdapter
+        mViewPagerAdapter = new ViewPagerAdapter(getActivity(), images);
+
+        // Adding the Adapter to the ViewPager
+        mViewPager.setAdapter(mViewPagerAdapter);
+
+        CircleIndicator indicator = (CircleIndicator) view.findViewById(R.id.indicator);
+        indicator.setViewPager(mViewPager);
 
         setHasOptionsMenu(true);
 
