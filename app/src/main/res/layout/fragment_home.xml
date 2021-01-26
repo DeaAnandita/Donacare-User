@@ -14,16 +14,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    <SearchView
-        android:id="@+id/simpleSearchView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:iconifiedByDefault="false"
-        android:background="@drawable/search"
-        android:layout_marginTop="20dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Light"
-        android:queryHint="Search Here" />
+<!--    <SearchView-->
+<!--        android:id="@+id/simpleSearchView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:iconifiedByDefault="false"-->
+<!--        android:background="@drawable/search"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Light"-->
+<!--        android:queryHint="Search Here" />-->
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp">
+
+                <include
+                    android:id="@+id/toolbar1"
+                    layout="@layout/my_toolbar" />
+            </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
         android:id="@+id/slidehome"
@@ -31,8 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_below="@+id/simpleSearchView">
-
+        android:layout_below="@+id/appbar">
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
@@ -51,6 +61,59 @@
             android:layout_height="10dp"/>
     </RelativeLayout>
 
+        <TextView
+            android:id="@+id/txtKategori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategori"
+            android:layout_below="@+id/slidehome"
+            android:layout_marginHorizontal="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:textSize="17dp"/>
+
+            <Button
+                android:id="@+id/btnDonasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="7dp"
+                android:text="Donasi Barang"
+                android:textColor="@color/white"
+                android:layout_below="@+id/txtKategori"/>
+
+            <Button
+                android:id="@+id/btnDDana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Donasi Dana"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/btnDonasi"
+                android:layout_below="@+id/txtKategori"/>
+
+            <Button
+                android:id="@+id/btnDJasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="Donasi Jasa"
+                android:textColor="@color/white"
+                android:layout_below="@+id/btnDonasi"/>
+
+            <TextView
+                android:id="@+id/txtBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Berita Teratas"
+                android:layout_below="@+id/btnDJasa"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="17dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListHome"
         android:theme="@style/ThemeOverlay.AppCompat.Light"
@@ -58,7 +121,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/slidehome"
+        android:layout_below="@+id/btnDJasa"
         android:layout_marginTop="40dp"
         tools:listitem="@layout/list_item"
         android:layout_marginHorizontal="20dp">

@@ -55,6 +55,7 @@
                     android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
 
                 <Button
+                    android:id="@+id/btnLhtSelengkapnya"
                     android:layout_alignParentBottom="true"
                     android:text="Lihat Selengkapnya"
                     android:layout_width="match_parent"
