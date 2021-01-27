@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                     if (username.equals(dataSnapshot.getValue(AccountModel.class).getUsername())) {
                                         authUsername = true;
-                                        name = dataSnapshot.getValue(AccountModel.class).getUsername();
+                                        name = dataSnapshot.getValue(AccountModel.class).getNama();
                                         email = dataSnapshot.getValue(AccountModel.class).getEmail();
                                         address = dataSnapshot.getValue(AccountModel.class).getAlamat();
                                         phone = dataSnapshot.getValue(AccountModel.class).getHp();
