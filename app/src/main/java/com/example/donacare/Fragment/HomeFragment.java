@@ -65,6 +65,7 @@ public class HomeFragment extends Fragment {
         circleIndicator = view.findViewById(R.id.indicator);
         mViewPager = view.findViewById(R.id.pager);
         recyclerView = view.findViewById(R.id.rvListHome);
+
         btnLhtSJadwal = view.findViewById(R.id.btnLhtSJadwal);
         btnLhtSJadwal.setOnClickListener(new View.OnClickListener() {
             @Override
