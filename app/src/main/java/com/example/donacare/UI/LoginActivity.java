@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     boolean authUsername, authPassword;
     Preferences preferences;
+    String email, name, address, phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,13 +87,25 @@ public class LoginActivity extends AppCompatActivity {
                                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                     if (username.equals(dataSnapshot.getValue(AccountModel.class).getUsername())) {
                                         authUsername = true;
+                                        name = dataSnapshot.getValue(AccountModel.class).getUsername();
+                                        email = dataSnapshot.getValue(AccountModel.class).getEmail();
+                                        address = dataSnapshot.getValue(AccountModel.class).getAlamat();
+                                        phone = dataSnapshot.getValue(AccountModel.class).getHp();
+                                        Log.d("alamat", address);
                                     }
                                     if (password.equals(dataSnapshot.getValue(AccountModel.class).getPassword())) {
                                         authPassword = true;
                                     }
                                 }
                                 if (authUsername && authPassword) {
+                                    preferences.setName(getApplicationContext(), name);
+                                    preferences.setAddress(getApplicationContext(), address);
+                                    preferences.setUsername(getApplicationContext(), username);
+                                    preferences.setEmail(getApplicationContext(), email);
+                                    preferences.setPhone(getApplicationContext(), phone);
                                     preferences.setStatus(getApplicationContext(), true);
+
+                                    Log.d("email", email);
                                     Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                     startActivity(intent);
                                     finish();

@@ -65,16 +65,6 @@ public class HomeFragment extends Fragment {
         mViewPager = view.findViewById(R.id.pager);
         recyclerView = view.findViewById(R.id.rvListHome);
 
-
-        btnLhtSelengkapnya = (Button) view.findViewById(R.id.btnLhtSelengkapnya);
-        btnLhtSelengkapnya.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), DetailHome.class);
-                startActivity(intent);
-            }
-        });
-
         // Initializing the ViewPagerAdapter
         mViewPagerAdapter = new ViewPagerAdapter(getActivity(), images);
 

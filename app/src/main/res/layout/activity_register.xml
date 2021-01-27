@@ -57,7 +57,7 @@
             android:background="@drawable/input_field"
             android:fontFamily="@font/regular"
             android:inputType="text"
-            android:hint="Nama Pengguna"
+            android:hint="Nama Lengkap"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
             android:textSize="15sp"
@@ -110,6 +110,21 @@
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"/>
 
+        <EditText
+            android:id="@+id/txt_address_register"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/input_field"
+            android:fontFamily="@font/regular"
+            android:hint="Alamat Tempat Tinggal"
+            android:inputType="text"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="15sp"
+            android:layout_below="@id/txt_phone_register"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"/>
+
         <TextView
             android:id="@+id/txt_forgot_register"
             android:layout_width="wrap_content"
@@ -118,7 +133,7 @@
             android:text="Lupa Password?"
             android:textColor="#332A2A"
             android:textSize="13sp"
-            android:layout_below="@id/txt_phone_register"
+            android:layout_below="@id/txt_address_register"
             android:layout_alignParentRight="true"
             android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"/>
