@@ -39,8 +39,7 @@
         android:text="Kategori donasi: "
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/spPilihanDonasi"
@@ -57,37 +56,87 @@
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
         app:cardElevation="5dp"
-        app:cardCornerRadius="7dp">
-        <androidx.constraintlayout.widget.ConstraintLayout
+        app:cardCornerRadius="4dp">
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/input_field2"
             android:padding="10dp">
+
             <TextView
-                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/txtInfoTransaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informasi Transaksi :"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/txt_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transfer Melalui Bank BRI :"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/txtInfoTransaksi"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                />
+
+            <TextView
                 android:id="@+id/tv_No"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_bank"
                 android:text="No. Rekening : 0123456789"
                 android:textColor="@color/black"
                 />
             <TextView
-                app:layout_constraintTop_toBottomOf="@+id/tv_No"
                 android:id="@+id/tv_Nama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_No"
                 android:text="Atas Nama : Unknow"
                 android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 />
+
             <TextView
-                app:layout_constraintTop_toBottomOf="@+id/tv_Nama"
-                android:id="@+id/tv_Bank"
+                android:id="@+id/txt_bank2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transfer Melalui Bank BRI :"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/tv_Nama"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_No2"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama Bank : BRI"
+                android:layout_below="@+id/txt_bank2"
+                android:text="No. Rekening : 0123456789"
                 android:textColor="@color/black"
-                android:layout_marginTop="5dp"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                />
+            <TextView
+                android:id="@+id/tv_Nama2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_No2"
+                android:text="Atas Nama : Unknow"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                />
+
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 

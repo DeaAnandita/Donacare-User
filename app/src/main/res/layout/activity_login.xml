@@ -42,7 +42,7 @@
         android:hint="Username"
         android:inputType="text"
         android:textColorHint="@color/colorAccent"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/black"
         android:textSize="15sp"/>
 
     <EditText
@@ -54,7 +54,7 @@
         android:hint="Password"
         app:passwordToggleEnabled="true"
         android:inputType="textPassword"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/black"
         android:textColorHint="@color/colorAccent"
         android:textSize="15sp"
         android:layout_marginHorizontal="20dp"
