@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/home_icon"
+        android:icon="@mipmap/home_icon"
         android:title="beranda"
         />
     <item
         android:id="@+id/nav_notification"
-        android:icon="@drawable/notification_icon"
+        android:icon="@mipmap/notification_icon"
         android:title="notifikasi"/>
     <item
         android:id="@+id/nav_profile"
-        android:icon="@drawable/profile_icon"
+        android:icon="@mipmap/profile_icon"
         android:title="profil"/>
 </menu>

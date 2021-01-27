@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment {
     Button btnLhtSelengkapnya;
 
     // images array
-    int[] images = {R.drawable.a1, R.drawable.a2};
+    int[] images = {R.mipmap.slider1, R.mipmap.slider2};
 
     // Creating Object of ViewPagerAdapter
     ViewPagerAdapter mViewPagerAdapter;
@@ -100,6 +100,14 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(homeAdapter);
+
+        homeAdapter.setOnItemClickListener(new HomeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(getActivity(), DetailHome.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

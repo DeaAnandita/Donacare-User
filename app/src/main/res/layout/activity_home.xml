@@ -33,7 +33,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="11dp"
-        android:background="@drawable/bottom_background"
+        android:background="@drawable/btn_background"
         app:itemIconTint="@drawable/color_selector"
         app:itemTextColor="@drawable/color_selector"
         app:menu="@menu/bottom_navigation" />
