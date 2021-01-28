@@ -105,7 +105,7 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
                 if (item.equals("Dana")) {
                     intent = new Intent(getApplicationContext(), InputDanaActivity.class);
                 } else if (item.equals("Jasa")) {
-//                    intent = new Intent(getApplicationContext(), Input)
+                    intent = new Intent(getApplicationContext(), InputDjasaActivity.class);
                 }
                 startActivity(intent);
             }

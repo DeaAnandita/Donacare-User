@@ -1,9 +1,12 @@
 package com.example.donacare.UI;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,6 +74,8 @@ public class InputDjasaActivity extends AppCompatActivity implements IPickResult
                 PickImageDialog.build(new PickSetup()).show(getSupportFragmentManager());
             }
         });
+
+
     }
 
         @Override

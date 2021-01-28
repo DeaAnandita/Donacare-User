@@ -74,7 +74,7 @@ public class InputDanaActivity extends AppCompatActivity {
                 if (item.equals("Barang")) {
                     intent = new Intent(getApplicationContext(), InputDonasiActivity.class);
                 } else if (item.equals("Jasa")) {
-//                    intent = new Intent(getApplicationContext(), Input)
+                    intent = new Intent(getApplicationContext(), InputDjasaActivity.class);
                 }
                 startActivity(intent);
             }
