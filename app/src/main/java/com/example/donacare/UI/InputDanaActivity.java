@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.donacare.Model.AccountModel;
+import com.example.donacare.Model.DanaModel;
+import com.example.donacare.Model.ItemModel;
 import com.example.donacare.Preferences;
 import com.example.donacare.R;
 import com.google.firebase.database.DataSnapshot;
@@ -33,7 +36,7 @@ public class InputDanaActivity extends AppCompatActivity {
 
     DatabaseReference databaseReference;
     Preferences preferences;
-    String email, name, address, phone;
+    String nominal, noRek, atasNama;
 
     Spinner spItem;
 
@@ -41,8 +44,6 @@ public class InputDanaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_dana);
-
-
 
         preferences = new Preferences();
 
@@ -57,11 +58,14 @@ public class InputDanaActivity extends AppCompatActivity {
         AtasNama = findViewById(R.id.et_atasNama_inputDana);
         spItem = findViewById(R.id.spPilihanDonasi);
 
-        String nominal = Nominal.getText().toString();
-        String noRek = NoRek.getText().toString();
-        String atName = AtasNama.getText().toString();
+        Toolbar toolbar = findViewById(R.id.toolbarInput_Dana);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Form Donasi Dana");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        String[] ITEMS = {"Barang", "Dana", "Jasa"};
+
+
+        String[] ITEMS = {"Dana", "Barang", "Jasa"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ITEMS);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spItem.setAdapter(adapter);
@@ -70,13 +74,13 @@ public class InputDanaActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String item = parent.getItemAtPosition(position).toString();
-                Intent intent = null;
+//                Intent intent = null;
                 if (item.equals("Barang")) {
-                    intent = new Intent(getApplicationContext(), InputDonasiActivity.class);
+                    startActivity(new Intent(getApplicationContext(), InputDonasiActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
                 } else if (item.equals("Jasa")) {
-                    intent = new Intent(getApplicationContext(), InputDjasaActivity.class);
+                    startActivity(new Intent(getApplicationContext(), InputDjasaActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
+
                 }
-                startActivity(intent);
             }
 
             @Override
@@ -88,12 +92,12 @@ public class InputDanaActivity extends AppCompatActivity {
         btnKirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (nominal.trim().isEmpty()) {
-                    Nominal.setError("Kolom tidak boleh kosong!");
-                } else if (noRek.trim().isEmpty()) {
-                    NoRek.setError("kolom tidak boleh kosong!");
-                } else if (atName.trim().isEmpty()) {
-                    AtasNama.setError("kolom tidak boleh kosong!");
+                nominal = Nominal.getText().toString();
+                noRek = NoRek.getText().toString();
+                atasNama = AtasNama.getText().toString();
+
+                if (nominal.trim().isEmpty()||noRek.trim().isEmpty()||atasNama.trim().isEmpty()) {
+                    Toast.makeText(InputDanaActivity.this, "Kolom tidak boleh kosong1", Toast.LENGTH_SHORT).show();
                 } else {
                     progressDialog.setMessage("Sending your data...");
                     progressDialog.setCancelable(false);
@@ -102,47 +106,28 @@ public class InputDanaActivity extends AppCompatActivity {
                     NoRek.setError(null);
                     AtasNama.setError(null);
 
-                    databaseReference.child(atName);
-                    databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            progressDialog.dismiss();
-                            if (snapshot.getValue() != null) {
-                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-
-                                }
-                                if (true) {
-                                    preferences.setName(getApplicationContext(), name);
-                                    preferences.setAddress(getApplicationContext(), address);
-//                                    preferences.setUsername(getApplicationContext(), username);
-                                    preferences.setEmail(getApplicationContext(), email);
-                                    preferences.setPhone(getApplicationContext(), phone);
-                                    preferences.setStatus(getApplicationContext(), true);
-
-                                    Log.d("email", email);
-                                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Something is wrong..", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                            progressDialog.dismiss();
-                        }
-                    });
-                    startActivity(new Intent(InputDanaActivity.this, HomeActivity.class));
+                    uploadDana();
                 }
             }
         });
-        Toolbar toolbar = findViewById(R.id.toolbarInput);
+    }
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Donasi Jasa");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    private void uploadDana() {
+        DanaModel danaModel = new DanaModel(nominal, noRek, atasNama);
+        databaseReference.push().setValue(danaModel);
+        progressDialog.dismiss();
 
+        startActivity(new Intent(getApplicationContext(),InputDanaActivity.class));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

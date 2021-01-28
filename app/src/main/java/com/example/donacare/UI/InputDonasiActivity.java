@@ -18,8 +18,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import com.example.donacare.Model.ItemModel;
 import com.example.donacare.Preferences;
 import com.example.donacare.R;
 import com.google.android.gms.tasks.Continuation;
@@ -37,9 +40,9 @@ import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class InputDonasiActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
-    String id, media;
+    String id;
     Spinner spItem;
-    Button btn_inputFoto,btn_kirim;
+    Button btn_inputFoto, btn_kirim;
     EditText txtJenisBarang, txtJumlahBarang, txtBeratBarang, txtAlamatLengkap;
     ProgressDialog progressDialog;
     Preferences preferences;
@@ -51,7 +54,7 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
 
     final int IMG_REQUEST = 1000;
     Uri imageUri, downloadUri;
-    String imageUrl;
+    String imageUrl, imageName, jenis, jumlah, berat, alamat;
 
 
     @Override
@@ -65,6 +68,10 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
             EasyPermissions.requestPermissions(this, "Grant the permission to fully access this apps", 10, permissions);
         }
 
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference("items");
+        databaseReference = FirebaseDatabase.getInstance().getReference("items");
+
         spItem = findViewById(R.id.spPilihanDonasi);
         btn_inputFoto = findViewById(R.id.btn_inputFoto_inputDonasi);
         btn_kirim = findViewById(R.id.btnKirim);
@@ -73,18 +80,18 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
         txtBeratBarang = findViewById(R.id.txtBeratBarang);
         txtAlamatLengkap = findViewById(R.id.txtAlamatLengkap);
 
+        Toolbar toolbar = findViewById(R.id.toolbarInput_Barang);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Form Donasi Barang");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         preferences = new Preferences();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("Items");
+        databaseReference = database.getReference("items");
 
         progressDialog = new ProgressDialog(this);
 
-        String jenis = txtJenisBarang.getText().toString();
-        String jumlah = txtJumlahBarang.getText().toString();
-        String berat = txtBeratBarang.getText().toString();
-        String alamat = txtAlamatLengkap.getText().toString();
-        
         btn_inputFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,13 +108,13 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String item = parent.getItemAtPosition(position).toString();
-                Intent intent = null;
+//                Intent intent = null;
                 if (item.equals("Dana")) {
-                    intent = new Intent(getApplicationContext(), InputDanaActivity.class);
+                    startActivity(new Intent(getApplicationContext(), InputDanaActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
+
                 } else if (item.equals("Jasa")) {
-                    intent = new Intent(getApplicationContext(), InputDjasaActivity.class);
+                    startActivity(new Intent(getApplicationContext(), InputDjasaActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
                 }
-                startActivity(intent);
             }
 
             @Override
@@ -120,14 +127,21 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
         btn_kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (jenis.trim().isEmpty() ||jumlah.trim().isEmpty()||berat.trim().isEmpty()||alamat.trim().isEmpty()) {
+                jenis = txtJenisBarang.getText().toString();
+                berat = txtBeratBarang.getText().toString();
+                jumlah = txtJumlahBarang.getText().toString();
+                alamat = txtAlamatLengkap.getText().toString();
+
+                if (jenis.trim().isEmpty() || jumlah.trim().isEmpty() || berat.trim().isEmpty() || alamat.trim().isEmpty() || imageUrl.trim().isEmpty()) {
                     Toast.makeText(InputDonasiActivity.this, "Kolom tidak boleh kosong!", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     progressDialog.setMessage("Sending your data...");
                     progressDialog.setCancelable(false);
                     progressDialog.show();
 
-                    fileReference = storageReference.child(media).child(id).child("profile." + getFileExtension(imageUri));
+                    imageName = Long.toString(System.currentTimeMillis());
+
+                    fileReference = storageReference.child(imageName + "." + getFileExtension(imageUri));
                     fileReference.putFile(imageUri).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                         @Override
                         public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
@@ -142,7 +156,8 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
                             if (task.isSuccessful()) {
                                 downloadUri = task.getResult();
                                 imageUrl = downloadUri.toString();
-                                startActivity(new Intent(InputDonasiActivity.this,HomeActivity.class));
+                                startActivity(new Intent(InputDonasiActivity.this, HomeActivity.class));
+                                uploadDonasi();
                             } else {
                                 Toast.makeText(getApplicationContext(), "Edit failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
@@ -151,6 +166,12 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
                 }
             }
         });
+    }
+
+    private void uploadDonasi() {
+        ItemModel itemModel = new ItemModel(jenis, jumlah, berat, alamat, imageUrl);
+        databaseReference.push().setValue(itemModel);
+        progressDialog.dismiss();
     }
 
     private void openFileChooser() {
@@ -166,6 +187,17 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == IMG_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            imageUri = data.getData();
+            imageUrl = data.getDataString();
+        }
+    }
+
+
 
     // Request Permissions
     @Override
@@ -175,10 +207,9 @@ public class InputDonasiActivity extends AppCompatActivity implements EasyPermis
     }
 
     @Override
-    public void onPermissionsGranted (int requestCode, @NonNull List<String> perms) {
+    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
         Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
     }
-
 
 
     @Override

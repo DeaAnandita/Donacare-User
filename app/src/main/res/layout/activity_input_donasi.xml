@@ -15,11 +15,12 @@
         tools:context=".UI.InputDonasiActivity">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarInput"
+            android:id="@+id/toolbarInput_Barang"
             android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
 
         <ImageView
             android:id="@+id/img_Input"
@@ -29,7 +30,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_below="@id/toolbarInput"/>
+            android:layout_below="@id/toolbarInput_Barang"/>
 
         <TextView
             android:id="@+id/txt_Info"
@@ -60,7 +61,6 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/sp_bg"
-            android:entries="@array/PilihanDonasi"
             android:layout_marginHorizontal="20dp"
             android:layout_below="@+id/txtKategoriDonasi"
             android:layout_marginBottom="10dp"/>
