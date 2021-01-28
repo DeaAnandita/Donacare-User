@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/white"
+    android:background="@color/color_white"
     tools:context=".UI.LoginActivity">
 
     <RelativeLayout
@@ -20,7 +20,7 @@
             android:layout_marginTop="50dp"
             android:fontFamily="@font/regular"
             android:text="Buat Akun Anda"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textSize="27sp"/>
 
         <TextView
@@ -41,11 +41,11 @@
             android:layout_below="@id/tvRegistrasi2"
             android:layout_marginTop="50dp"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/input_field"
+            android:background="@drawable/input_field_circle"
             android:fontFamily="@font/regular"
             android:inputType="text"
             android:hint="Username"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textColorHint="@color/colorAccent"
             android:textSize="15sp"/>
 
@@ -56,11 +56,11 @@
             android:layout_marginTop="20dp"
             android:layout_below="@id/txt_username_register"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/input_field"
+            android:background="@drawable/input_field_circle"
             android:fontFamily="@font/regular"
             android:inputType="text"
             android:hint="Nama Lengkap"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textColorHint="@color/colorAccent"
             android:textSize="15sp"/>
 
@@ -71,11 +71,11 @@
             android:layout_below="@id/txt_name_register"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/input_field"
+            android:background="@drawable/input_field_circle"
             android:fontFamily="@font/regular"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textColorHint="@color/colorAccent"
             android:textSize="15sp"/>
 
@@ -86,11 +86,11 @@
             android:layout_below="@id/txt_password_register"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/input_field"
+            android:background="@drawable/input_field_circle"
             android:fontFamily="@font/regular"
             android:inputType="textEmailAddress"
             android:hint="Email"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textColorHint="@color/colorAccent"
             android:textSize="15sp"/>
 
@@ -101,11 +101,11 @@
             android:layout_below="@id/txt_email_register"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/input_field"
+            android:background="@drawable/input_field_circle"
             android:fontFamily="@font/regular"
             android:hint="No. Telp"
             android:inputType="phone"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textColorHint="@color/colorAccent"
             android:textSize="15sp"/>
 
@@ -116,11 +116,11 @@
             android:layout_below="@id/txt_phone_register"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/input_field"
+            android:background="@drawable/input_field_circle"
             android:fontFamily="@font/regular"
             android:hint="Alamat Tempat Tinggal"
             android:inputType="text"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textColorHint="@color/colorAccent"
             android:textSize="15sp"/>
 
@@ -134,7 +134,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/regular"
             android:text="Lupa Password?"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textSize="13sp"/>
 
         <Button
@@ -148,7 +148,7 @@
             android:fontFamily="@font/regular"
             android:text="DAFTAR"
             android:textSize="18sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/color_white"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -165,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:text="Sudah punya akun? "
-                android:textColor="@color/black"
+                android:textColor="@color/color_black"
                 android:textSize="16sp"/>
 
             <TextView
@@ -174,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:text=" MASUK"
-                android:textColor="@color/black"
+                android:textColor="@color/color_black"
                 android:textSize="17sp"/>
         </LinearLayout>
 

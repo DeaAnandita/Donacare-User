@@ -4,14 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@color/color_white"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
-        android:visibility="visible"
-        android:id="@+id/cardku_kelas"
-        android:background="@color/white"
+        android:id="@+id/cv_list_kelas"
+        android:background="@color/color_white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="6dp"
@@ -19,7 +18,7 @@
         app:cardUseCompatPadding="true">
 
         <RelativeLayout
-            android:background="@color/white"
+            android:background="@color/color_white"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="180dp">
@@ -30,10 +29,10 @@
                 android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="10dp"
-                android:background="@mipmap/kelas_bg" />
+                android:background="@mipmap/img_kelas_background" />
 
             <TextView
-                android:id="@+id/txtTitle_kelas"
+                android:id="@+id/tv_title_kelas"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/image_kelas"
                 android:layout_width="match_parent"
@@ -44,24 +43,24 @@
                 android:text="title"/>
 
             <TextView
-                android:id="@+id/txtSubtitle_kelas"
+                android:id="@+id/tv_subtitle_kelas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="10dp"
                 android:textSize="12dp"
                 android:layout_toRightOf="@+id/image_kelas"
-                android:layout_below="@+id/txtTitle_kelas"
+                android:layout_below="@+id/tv_title_kelas"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
 
             <Button
-                android:id="@+id/btnLhtSelengkapnya_kelas"
+                android:id="@+id/btn_lihat_selengkapnya_kelas"
                 android:layout_alignParentBottom="true"
                 android:text="Lihat Selengkapnya"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/color_white"/>
 
         </RelativeLayout>
 

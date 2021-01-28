@@ -6,49 +6,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UI.InputDanaActivity">
+    tools:context=".UI.InputDonasiDanaActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarInput"
+        android:id="@+id/toolbar_input_donasi_dana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"/>
 
     <ImageView
-        android:id="@+id/img_Input"
+        android:id="@+id/img_input_dana"
         android:layout_width="355dp"
         android:layout_height="200dp"
-        android:src="@mipmap/img_bg"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_marginHorizontal="20dp"
+        android:src="@mipmap/img_background"/>
 
     <TextView
-        android:id="@+id/txt_Info"
+        android:id="@+id/tv_title_berita"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
         android:text="Korban Longsor Bandung"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="5dp"/>
+        android:textColor="@color/color_black"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kategori donasi: "
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
+        android:text="Kategori donasi: "
         android:textStyle="bold" />
 
     <Spinner
-        android:id="@+id/spPilihanDonasi"
+        android:id="@+id/sp_pilihan_donasi"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/sp_bg"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:entries="@array/PilihanDonasi"
-        android:layout_marginHorizontal="20dp"/>
+        android:background="@drawable/spinner_background"
+        android:entries="@array/PilihanDonasi"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -61,80 +61,75 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/input_field2"
+            android:background="@drawable/input_field_retangle"
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/txtInfoTransaksi"
+                android:id="@+id/tv_info_transaksi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Informasi Transaksi :"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
-                android:textSize="16dp"
-                />
+                android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/txt_bank"
+                android:id="@+id/tv_bank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Transfer Melalui Bank BRI :"
-                android:textColor="@color/black"
+                android:textColor="@color/color_black"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/txtInfoTransaksi"
+                android:layout_below="@id/tv_info_transaksi"
                 android:textStyle="bold"
-                android:textSize="16dp"
-                />
+                android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/tv_No"
+                android:id="@+id/tv_no"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_bank"
+                android:layout_below="@+id/tv_bank"
                 android:text="No. Rekening : 0123456789"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:id="@+id/tv_Nama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_No"
-                android:text="Atas Nama : Unknow"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"
-                />
+                android:textColor="@color/color_black" />
 
             <TextView
-                android:id="@+id/txt_bank2"
+                android:id="@+id/tv_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_no"
+                android:text="Atas Nama : Unknow"
+                android:textColor="@color/color_black"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/tv_bank2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Transfer Melalui Bank BRI :"
-                android:textColor="@color/black"
+                android:textColor="@color/color_black"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/tv_Nama"
+                android:layout_below="@id/tv_nama"
                 android:textStyle="bold"
-                android:textSize="16dp"
-                />
+                android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/tv_No2"
+                android:id="@+id/tv_no2"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_bank2"
+                android:layout_below="@+id/tv_bank2"
                 android:text="No. Rekening : 0123456789"
-                android:textColor="@color/black"
-                />
+                android:textColor="@color/color_black" />
+
             <TextView
-                android:id="@+id/tv_Nama2"
+                android:id="@+id/tv_nama2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_No2"
+                android:layout_below="@+id/tv_no2"
                 android:text="Atas Nama : Unknow"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"
-                />
+                android:textColor="@color/color_black"
+                android:layout_marginTop="5dp" />
 
         </RelativeLayout>
 

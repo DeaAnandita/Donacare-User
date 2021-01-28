@@ -35,7 +35,7 @@ public class DetailHome extends AppCompatActivity {
         btn_donasi_detailHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DetailHome.this, InputDonasiActivity.class);
+                Intent intent = new Intent(DetailHome.this, InputDonasiBarangActivity.class);
                 startActivity(intent);
             }
         });

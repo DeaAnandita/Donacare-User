@@ -15,12 +15,12 @@
 
         </activity>
         <activity
-            android:name=".UI.InputDjasaActivity"
-            android:parentActivityName=".UI.DonasiJasa" />
+            android:name=".UI.InputDonasiJasaActivity"
+            android:parentActivityName=".UI.DonasiJasaActivity" />
         <activity
             android:name=".UI.DetailKelasActivity"
             android:parentActivityName=".UI.HomeActivity" />
-        <activity android:name=".UI.InputDanaActivity" />
+        <activity android:name=".UI.InputDonasiDanaActivity" />
         <activity android:name=".UI.DetailHome" />
         <activity android:name=".UI.SplashActivity">
             <intent-filter>
@@ -30,13 +30,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.InputDonasiActivity"
-            android:parentActivityName=".UI.DonasiJasa" />
+            android:name=".UI.InputDonasiBarangActivity"
+            android:parentActivityName=".UI.DonasiJasaActivity" />
         <activity android:name=".UI.HomeActivity"></activity>
         <activity android:name=".UI.RegisterActivity" />
         <activity android:name=".UI.LoginActivity" />
         <activity
-            android:name=".UI.DonasiJasa"
+            android:name=".UI.DonasiJasaActivity"
             android:parentActivityName=".UI.HomeActivity"></activity>
 
         <provider

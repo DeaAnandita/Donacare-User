@@ -14,17 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="30dp"
-            android:background="@drawable/profile_bg">
-
-<!--            <ImageView-->
-<!--                android:id="@+id/btn_edit_profile"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/ic_baseline_edit_24"-->
-<!--                android:layout_alignParentTop="true"-->
-<!--                android:layout_alignParentRight="true"-->
-<!--                android:layout_alignParentEnd="true"-->
-<!--                android:layout_margin="20dp"/>-->
+            android:background="@drawable/profile_background">
 
             <ImageView
                 android:id="@+id/img1"
@@ -33,8 +23,8 @@
                 android:padding="25dp"
                 android:layout_marginTop="30dp"
                 android:layout_centerHorizontal="true"
-                android:src="@mipmap/profile"
-                android:background="@drawable/btn_background"
+                android:src="@mipmap/profile_icon2"
+                android:background="@drawable/btn_background_circle"
                 />
 
             <TextView
@@ -43,47 +33,47 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/img1"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
                 android:textAlignment="center"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@android:color/black"
                 android:text="John Doe"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="10dp"/>
+                android:gravity="center_horizontal"/>
 
             <ImageView
                 android:id="@+id/imgProfpic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/profpic"
                 android:layout_below="@id/tv_username_profile"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/profpic"/>
 
             <ImageView
                 android:id="@+id/imgEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/email"
                 android:layout_below="@id/imgProfpic"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="25dp"
+                android:src="@mipmap/email"/>
 
             <ImageView
                 android:id="@+id/imgPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_phone_24"
                 android:layout_below="@id/imgEmail"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_baseline_phone"/>
 
             <ImageView
                 android:id="@+id/imgLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/location"
                 android:layout_below="@id/imgPhone"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="25dp"
+                android:src="@mipmap/location_icon"/>
 
             <TextView
                 android:id="@+id/tv_name_profile"
@@ -92,7 +82,7 @@
                 android:text="Example"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@android:color/black"
                 android:layout_below="@+id/tv_username_profile"
                 android:layout_toRightOf="@+id/imgProfpic"/>
 
@@ -104,14 +94,14 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="15dp"
                 android:layout_below="@+id/imgProfpic"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@android:color/black"
                 android:layout_toRightOf="@+id/imgEmail"/>
 
             <TextView
                 android:id="@+id/tv_phone_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@android:color/black"
                 android:text="08912381923"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="15dp"
@@ -122,23 +112,23 @@
                 android:id="@+id/tv_address_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jl. Example no.09, Example, Rt/Rw : 02/02"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="15dp"
-                android:textColor="@android:color/darker_gray"
                 android:layout_below="@+id/imgPhone"
-                android:layout_toRightOf="@+id/imgEmail"/>
+                android:layout_toRightOf="@+id/imgEmail"
+                android:text="Jl. Example no.09, Example, Rt/Rw : 02/02"
+                android:textColor="@android:color/black"/>
 
         </RelativeLayout>
 
         <Button
             android:id="@+id/btn_logout"
-            android:text="Logout"
             android:layout_below="@id/layout_profile"
             android:layout_marginTop="20dp"
             android:layout_centerInParent="true"
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textColor="@color/color_white"/>
 
 </RelativeLayout>

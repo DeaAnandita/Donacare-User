@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/white"
-        tools:context=".UI.InputDonasiActivity">
+        android:background="@color/color_white"
+        tools:context=".UI.InputDonasiBarangActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarInput"
@@ -23,7 +23,7 @@
 
         <ImageView
             android:id="@+id/img_Input"
-            android:src="@mipmap/img_bg"
+            android:src="@mipmap/img_background"
             android:layout_width="355dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
@@ -39,7 +39,7 @@
             android:text="Korban Longsor Bandung"
             android:textStyle="bold"
             android:textSize="18dp"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="5dp"/>
 
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kategori donasi: "
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:textStyle="bold" />
@@ -60,7 +60,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Light"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/sp_bg"
+            android:background="@drawable/spinner_background"
             android:layout_marginTop="10dp"
             android:entries="@array/PilihanDonasi"
             android:layout_marginHorizontal="20dp" />
@@ -72,12 +72,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/input_field2"
+            android:background="@drawable/input_field_retangle"
             android:fontFamily="@font/regular"
             android:hint="Jenis Barang"
             android:inputType="text"
             android:textColorHint="@color/colorAccent"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textSize="15sp"/>
 
         <EditText
@@ -85,12 +85,12 @@
             android:layout_below="@id/txtJenisBarang"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/input_field2"
+            android:background="@drawable/input_field_retangle"
             android:fontFamily="@font/regular"
             android:hint="Jumlah Barang"
             app:passwordToggleEnabled="true"
             android:inputType="textPassword"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textColorHint="@color/colorAccent"
             android:textSize="15sp"
             android:layout_marginHorizontal="20dp"
@@ -103,12 +103,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/input_field2"
+            android:background="@drawable/input_field_retangle"
             android:fontFamily="@font/regular"
             android:hint="Berat Barang"
             android:inputType="text"
             android:textColorHint="@color/colorAccent"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textSize="15sp"/>
 
         <EditText
@@ -116,11 +116,11 @@
             android:layout_below="@+id/txtBeratBarang"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/input_field2"
+            android:background="@drawable/input_field_retangle"
             android:fontFamily="@font/regular"
             android:hint="Alamat Lengkap"
             android:inputType="textPassword"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textColorHint="@color/colorAccent"
             android:textSize="15sp"
             android:layout_marginHorizontal="20dp"
@@ -132,9 +132,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@drawable/btn_whatsapp"
+            android:background="@drawable/btn_background_retangle"
             android:text="Foto Barang"
-            android:textColor="@color/white" />
+            android:textColor="@color/color_white" />
 
         <Button
             android:id="@+id/btnKirim"
@@ -142,9 +142,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/btn_whatsapp"
+            android:background="@drawable/btn_background_retangle"
             android:text="Kirim"
-            android:textColor="@color/white" />
+            android:textColor="@color/color_white" />
 
     </RelativeLayout>
 </ScrollView>

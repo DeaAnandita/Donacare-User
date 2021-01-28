@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@color/color_white"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
         android:visibility="visible"
-        android:id="@+id/cardku"
-        android:background="@color/white"
+        android:id="@+id/cv_home"
+        android:background="@color/color_white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="6dp"
@@ -19,23 +19,23 @@
         app:cardUseCompatPadding="true">
 
         <RelativeLayout
-            android:background="@color/white"
+            android:background="@color/color_white"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="180dp">
 
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/image_list_home"
                 android:layout_width="210dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="10dp"
-                android:background="@mipmap/img_bg" />
+                android:background="@mipmap/img_background" />
 
                 <TextView
-                    android:id="@+id/txtTitle"
+                    android:id="@+id/tv_title"
                     android:layout_marginTop="10dp"
-                    android:layout_toRightOf="@+id/image"
+                    android:layout_toRightOf="@+id/image_list_home"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -44,24 +44,24 @@
                     android:text="title"/>
 
                 <TextView
-                    android:id="@+id/txtSubtitle"
+                    android:id="@+id/tv_subtitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginTop="10dp"
                     android:textSize="12dp"
-                    android:layout_toRightOf="@+id/image"
-                    android:layout_below="@+id/txtTitle"
+                    android:layout_toRightOf="@+id/image_list_home"
+                    android:layout_below="@+id/tv_title"
                     android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
 
                 <Button
-                    android:id="@+id/btnLhtSelengkapnya"
+                    android:id="@+id/btn_lihat_selengkapnya_home"
                     android:layout_alignParentBottom="true"
                     android:text="Lihat Selengkapnya"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/color_white"/>
 
         </RelativeLayout>
 

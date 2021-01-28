@@ -37,125 +37,124 @@
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:padding="10dp"
-            android:background="@drawable/search" />
+            android:background="@drawable/search_background" />
         <me.relex.circleindicator.CircleIndicator
             android:id="@+id/indicator"
             app:ci_width="5dp"
             app:ci_height="5dp"
             app:ci_drawable="@drawable/circleindicator_round"
-            android:layout_marginTop="10dp"
             android:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_marginTop="10dp"
             android:layout_below="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="10dp"/>
     </RelativeLayout>
 
         <TextView
-            android:id="@+id/tv_Kategori"
+            android:id="@+id/tv_kategori"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/slidehome"
             android:layout_marginHorizontal="20dp"
             android:text="Kategori"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/color_black"
             android:textSize="17dp"/>
 
             <Button
-                android:id="@+id/btnDBarang"
+                android:id="@+id/btn_donasi_barang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="7dp"
+                android:layout_below="@+id/tv_kategori"
                 android:text="Donasi Barang"
-                android:textColor="@color/white"
-                android:layout_below="@+id/tv_Kategori"/>
+                android:textColor="@color/color_white"/>
 
             <Button
-                android:id="@+id/btnDDana"
+                android:id="@+id/btn_donasi_dana"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
+                android:layout_toRightOf="@+id/btn_donasi_barang"
+                android:layout_below="@+id/tv_kategori"
                 android:text="Donasi Dana"
-                android:textColor="@color/white"
-                android:layout_toRightOf="@+id/btnDBarang"
-                android:layout_below="@+id/tv_Kategori"/>
+                android:textColor="@color/color_white"/>
 
             <Button
-                android:id="@+id/btnDJasa"
+                android:id="@+id/btn_donasi_jasa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginHorizontal="20dp"
-                android:text="Donasi Jasa"
-                android:textColor="@color/white"
-                android:layout_below="@+id/btnDBarang"/>
+                android:textColor="@color/color_white"
+                android:layout_below="@+id/btn_donasi_barang"
+                android:text="Donasi Jasa"/>
 
             <TextView
-                android:id="@+id/txtJadwalV"
+                android:id="@+id/tv_daftar_kelas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btnDJasa"
+                android:layout_below="@+id/btn_donasi_jasa"
                 android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="20dp"
                 android:text="Daftar Kelas"
                 android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="@color/color_black"
                 android:textSize="17dp"/>
 
             <androidx.cardview.widget.CardView
-            android:id="@+id/cvJadwalV"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="6dp"
-            android:layout_below="@+id/txtJadwalV"
-            app:cardElevation="3dp"
-            android:layout_marginHorizontal="20dp"
-            app:cardUseCompatPadding="true">
+                android:id="@+id/cv_jadwal_volunteer"
+                android:background="@color/color_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_daftar_kelas"
+                android:layout_marginHorizontal="20dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
 
                 <RelativeLayout
-                    android:background="@color/white"
+                    android:background="@color/color_white"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="160dp">
 
                     <TextView
-                        android:id="@+id/txtjadwal"
+                        android:id="@+id/tv_jadwal1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
                         android:text="Jadwal"
                         android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="@color/color_donker"
-                        android:fontFamily="@font/regular"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="30dp"
-                        />
+                        android:fontFamily="@font/regular" />
 
                     <TextView
-                        android:id="@+id/txtjadwal2"
+                        android:id="@+id/tv_jadwal2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_jadwal1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
                         android:text="Volunteer Jasa Pendidikan"
                         android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="@color/color_donker"
                         android:fontFamily="@font/regular"
-                        android:layout_below="@+id/txtjadwal"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
                         />
 
                     <Button
-                        android:id="@+id/btn_Lihat_Selengkapnya_Jadwal"
+                        android:id="@+id/btn_lihat_selengkapnya_jadwal"
                         android:layout_marginBottom="10dp"
                         android:layout_alignParentBottom="true"
-                        android:text="Lihat Selengkapnya"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
-                        android:textColor="@color/white"/>
+                        android:text="Lihat Selengkapnya"
+                        android:textColor="@color/color_white"/>
 
                 </RelativeLayout>
 
@@ -165,25 +164,25 @@
                 android:id="@+id/txtBerita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/cvJadwalV"
+                android:layout_below="@+id/cv_jadwal_volunteer"
                 android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="20dp"
                 android:text="Berita Teratas"
                 android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="@color/color_black"
                 android:textSize="17dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListHome"
-        android:theme="@style/ThemeOverlay.AppCompat.Light"
-        android:background="@color/white"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:id="@+id/rv_list_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtBerita"
         android:layout_marginTop="20dp"
-        tools:listitem="@layout/list_item"
-        android:layout_marginHorizontal="20dp">
+        android:layout_marginHorizontal="20dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        android:background="@color/color_white"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/list_item_home">
 
     </androidx.recyclerview.widget.RecyclerView>
 

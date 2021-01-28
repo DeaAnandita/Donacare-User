@@ -10,7 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.donacare.R;
 
-public class DonasiJasa extends AppCompatActivity {
+public class DonasiJasaActivity extends AppCompatActivity {
 
     Button btn_daftar_donasi_jasa;
 
@@ -29,7 +29,7 @@ public class DonasiJasa extends AppCompatActivity {
         btn_daftar_donasi_jasa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DonasiJasa.this, InputDjasaActivity.class);
+                Intent intent = new Intent(DonasiJasaActivity.this, InputDonasiJasaActivity.class);
                 startActivity(intent);
             }
         });

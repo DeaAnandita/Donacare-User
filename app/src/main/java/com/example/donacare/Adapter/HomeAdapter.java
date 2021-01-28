@@ -31,7 +31,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     OnItemClickListener mListener;
 
     public HomeAdapter(DetailKelasActivity mContext, ArrayList<KelasModel> kelasModels) {
-
     }
 
     public interface OnItemClickListener {
@@ -41,7 +40,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }
-
 
     public HomeAdapter( Context mContext, List<HomeModel> dataList) {
         this.dataList = dataList;
@@ -53,14 +51,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     @Override
     public HomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        viewku = layoutInflater.inflate(R.layout.list_item, parent, false);
+        viewku = layoutInflater.inflate(R.layout.list_item_home, parent, false);
         return new HomeViewHolder(viewku, mListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
-        holder.txtTitle.setText(dataList.get(position).getTitle());
-        holder.txtSubtitle.setText(dataList.get(position).getSubtitle());
+        holder.tv_title.setText(dataList.get(position).getTitle());
+        holder.tv_subtitle.setText(dataList.get(position).getSubtitle());
     }
 
     @Override
@@ -69,20 +67,20 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     }
 
     class HomeViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtTitle, txtSubtitle;
-        private ImageView img;
-        CardView cardku;
-        Button btnLhtSelengkapnya;
+        private TextView tv_title, tv_subtitle;
+        private ImageView img_list_home;
+        CardView cv_home;
+        Button btn_lihat_selengkapnya_home;
 
         HomeViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
-            img = itemView.findViewById(R.id.image);
-            btnLhtSelengkapnya = itemView.findViewById(R.id.btnLhtSelengkapnya);
-            cardku = itemView.findViewById(R.id.cardku);
-            txtTitle = itemView.findViewById(R.id.txtTitle);
-            txtSubtitle = itemView.findViewById(R.id.txtSubtitle);
+            img_list_home = itemView.findViewById(R.id.image_list_home);
+            btn_lihat_selengkapnya_home = itemView.findViewById(R.id.btn_lihat_selengkapnya_home);
+            cv_home = itemView.findViewById(R.id.cv_home);
+            tv_title = itemView.findViewById(R.id.tv_title);
+            tv_subtitle = itemView.findViewById(R.id.tv_subtitle);
 
-            btnLhtSelengkapnya.setOnClickListener(new View.OnClickListener() {
+            btn_lihat_selengkapnya_home.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (listener != null){

@@ -1,9 +1,12 @@
 package com.example.donacare.UI;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,9 +20,11 @@ import com.vansuita.pickimage.listeners.IPickResult;
 
 import java.io.File;
 
-public class InputDjasaActivity extends AppCompatActivity implements IPickResult {
+public class InputDonasiJasaActivity extends AppCompatActivity implements IPickResult {
 
     ImageView img_CV, img_porto, img_pasfoto;
+    Button btn_input_donasi_jasa;
+    ProgressDialog progressDialog;
 
     private Bitmap selectedImage;
 
@@ -27,19 +32,20 @@ public class InputDjasaActivity extends AppCompatActivity implements IPickResult
     private String selectedImagePathPorto = "";
     private String selectedImagePathPasfoto = "";
 
-    String foto_CV = "";
-    String foto_porto = "";
-    String foto_pasfoto = "";
-
-    String sjenis;
     private File fileselectedImagePathCV;
     private File fileselectedImagePathPorto;
     private File fileselectedImagePathPasfoto;
 
+    String foto_CV = "";
+    String foto_porto = "";
+    String foto_pasfoto = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_djasa);
+        setContentView(R.layout.activity_input_donasi_jasa);
+
+        progressDialog = new ProgressDialog(this);
 
         Toolbar toolbar = findViewById(R.id.toolbarInput_DJasa);
         setSupportActionBar(toolbar);
@@ -49,6 +55,18 @@ public class InputDjasaActivity extends AppCompatActivity implements IPickResult
         img_CV = findViewById(R.id.img_CV);
         img_porto = findViewById(R.id.img_porto);
         img_pasfoto = findViewById(R.id.img_pasfoto);
+        btn_input_donasi_jasa = findViewById(R.id.btn_input_donasi_jasa);
+        btn_input_donasi_jasa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progressDialog.setMessage("Loading...");
+                progressDialog.setCancelable(false);
+                progressDialog.show();
+                Intent intent = new Intent(InputDonasiJasaActivity.this, HomeActivity.class);
+                startActivity(intent);
+                progressDialog.dismiss();
+            }
+        });
 
         img_CV.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".UI.DonasiJasa">
+    android:background="@color/color_white"
+    tools:context=".UI.DonasiJasaActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_syarat_donasi_jasa"
@@ -39,7 +39,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/input_field2"
+            android:background="@drawable/input_field_retangle"
             android:padding="10dp">
 
             <TextView
@@ -50,7 +50,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:text="- Mampu dan mau memeberikan jasanya untuk mengajar."
                 android:textSize="15dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/color_black" />
 
             <TextView
                 android:id="@+id/txt2"
@@ -61,7 +61,7 @@
                 android:layout_below="@+id/txt1"
                 android:text="- Usia minimal 20 tahun,maskimal 30 tahun."
                 android:textSize="15dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/color_black" />
 
             <TextView
                 android:id="@+id/txt3"
@@ -73,7 +73,7 @@
                 android:layout_below="@+id/txt2"
                 android:text="- Pendidikan maksimal S1"
                 android:textSize="15dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/color_black" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -102,7 +102,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/input_field2"
+            android:background="@drawable/input_field_retangle"
             android:padding="10dp">
 
             <TextView
@@ -113,7 +113,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:text="- Riwayat Hidup/Curiculum Vitae"
                 android:textSize="15dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/color_black" />
 
             <TextView
                 android:id="@+id/txt2_2"
@@ -124,7 +124,7 @@
                 android:layout_below="@+id/txt1_1"
                 android:text="- Portofolio"
                 android:textSize="15dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/color_black" />
 
             <TextView
                 android:id="@+id/txt3_3"
@@ -136,7 +136,7 @@
                 android:layout_below="@+id/txt2_2"
                 android:text="- Pas Foto"
                 android:textSize="15dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/color_black" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
@@ -147,6 +147,6 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:text="Daftar Sekarang"
-        android:textColor="@color/white"/>
+        android:textColor="@color/color_white"/>
 
 </RelativeLayout>

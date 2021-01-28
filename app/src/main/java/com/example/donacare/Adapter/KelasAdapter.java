@@ -51,8 +51,8 @@ public class KelasAdapter extends RecyclerView.Adapter<KelasAdapter.HomeViewHold
 
     @Override
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
-        holder.txtTitle_kelas.setText(dataList_kelas.get(position).getTitle_kelas());
-        holder.txtSubtitle_kelas.setText(dataList_kelas.get(position).getSubtitle_kelas());
+        holder.tv_title_kelas.setText(dataList_kelas.get(position).getTitle_kelas());
+        holder.tv_subtitle_kelas.setText(dataList_kelas.get(position).getSubtitle_kelas());
     }
 
     @Override
@@ -61,20 +61,20 @@ public class KelasAdapter extends RecyclerView.Adapter<KelasAdapter.HomeViewHold
     }
 
     class HomeViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtTitle_kelas, txtSubtitle_kelas;
+        private TextView tv_title_kelas, tv_subtitle_kelas;
         private ImageView img_kelas;
-        CardView cardku_kelas;
-        Button btnLhtSelengkapnya_kelas;
+        CardView cv_list_kelas;
+        Button btn_lihat_selengkapnya_kelas;
 
         HomeViewHolder(View itemView, final HomeAdapter.OnItemClickListener listener) {
             super(itemView);
             img_kelas = itemView.findViewById(R.id.image_kelas);
-            btnLhtSelengkapnya_kelas = itemView.findViewById(R.id.btnLhtSelengkapnya_kelas);
-            cardku_kelas = itemView.findViewById(R.id.cardku_kelas);
-            txtTitle_kelas = itemView.findViewById(R.id.txtTitle_kelas);
-            txtSubtitle_kelas = itemView.findViewById(R.id.txtSubtitle_kelas);
+            btn_lihat_selengkapnya_kelas = itemView.findViewById(R.id.btn_lihat_selengkapnya_kelas);
+            cv_list_kelas = itemView.findViewById(R.id.cv_list_kelas);
+            tv_title_kelas = itemView.findViewById(R.id.tv_title_kelas);
+            tv_subtitle_kelas = itemView.findViewById(R.id.tv_subtitle_kelas);
 
-            btnLhtSelengkapnya_kelas.setOnClickListener(new View.OnClickListener() {
+            btn_lihat_selengkapnya_kelas.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (listener != null){

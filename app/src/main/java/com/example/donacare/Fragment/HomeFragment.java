@@ -28,7 +28,7 @@ import com.example.donacare.Model.HomeModel;
 import com.example.donacare.R;
 import com.example.donacare.UI.DetailHome;
 import com.example.donacare.UI.DetailKelasActivity;
-import com.example.donacare.UI.DonasiJasa;
+import com.example.donacare.UI.DonasiJasaActivity;
 
 import java.util.ArrayList;
 
@@ -60,16 +60,16 @@ public class HomeFragment extends Fragment {
         toolbar_home = view.findViewById(R.id.toolbar);
         circleIndicator = view.findViewById(R.id.indicator);
         mViewPager = view.findViewById(R.id.pager);
-        recyclerView = view.findViewById(R.id.rvListHome);
+        recyclerView = view.findViewById(R.id.rv_list_home);
 
-        btn_Donasi_Barang = view.findViewById(R.id.btnDBarang);
-        btn_Donasi_Dana = view.findViewById(R.id.btnDDana);
-        btn_Donasi_Jasa = view.findViewById(R.id.btnDJasa);
+        btn_Donasi_Barang = view.findViewById(R.id.btn_donasi_barang);
+        btn_Donasi_Dana = view.findViewById(R.id.btn_donasi_dana);
+        btn_Donasi_Jasa = view.findViewById(R.id.btn_donasi_jasa);
 
         btn_Donasi_Barang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), DonasiJasa.class);
+                Intent intent = new Intent(getActivity(), DonasiJasaActivity.class);
                 startActivity(intent);
             }
         });
@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment {
         btn_Donasi_Dana.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), DonasiJasa.class);
+                Intent intent = new Intent(getActivity(), DonasiJasaActivity.class);
                 startActivity(intent);
             }
         });
@@ -85,12 +85,12 @@ public class HomeFragment extends Fragment {
         btn_Donasi_Jasa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), DonasiJasa.class);
+                Intent intent = new Intent(getActivity(), DonasiJasaActivity.class);
                 startActivity(intent);
             }
         });
 
-        btn_Lihat_Selengkapnya_Jadwal = view.findViewById(R.id.btn_Lihat_Selengkapnya_Jadwal);
+        btn_Lihat_Selengkapnya_Jadwal = view.findViewById(R.id.btn_lihat_selengkapnya_jadwal);
         btn_Lihat_Selengkapnya_Jadwal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

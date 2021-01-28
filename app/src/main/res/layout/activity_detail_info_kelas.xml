@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/color_white"
     tools:context=".UI.DetailInfoKelasActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -23,7 +23,7 @@
         android:text="Kelas IPA VII"
         android:textStyle="bold"
         android:textSize="18dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/color_black"/>
 
     <ImageView
         android:id="@+id/img_detail_info_kelas"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_nama_kelas"
         android:layout_marginHorizontal="20dp"
-        android:background="@mipmap/kelas_bg" />
+        android:background="@mipmap/img_kelas_background" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_info_jadwal"
@@ -46,7 +46,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/input_field2"
+            android:background="@drawable/input_field_retangle"
             android:padding="10dp">
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_below="@+id/tv_jadwal_kelas"
                 android:text="Senin - Sabtu : 08:00 - 10:00 WIB"
                 android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/color_black"/>
 
             <TextView
                 android:id="@+id/txt_info2"
@@ -82,7 +82,7 @@
                 android:layout_below="@+id/txt_info1"
                 android:text="Minggu : Libur"
                 android:textSize="15dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/color_black" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -100,7 +100,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/input_field2"
+            android:background="@drawable/input_field_retangle"
             android:padding="10dp">
 
             <TextView
@@ -124,7 +124,7 @@
                 android:layout_below="@+id/tv_info_link"
                 android:text="Senin : http://LinkZoom/RLNSADH2149jdksa"
                 android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/color_black"/>
 
             <TextView
                 android:id="@+id/tv_info4"
@@ -136,7 +136,7 @@
                 android:layout_below="@+id/tv_info3"
                 android:text="Selasa : http://LinkZoom/SFHD293HEJSDA"
                 android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/color_black"/>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

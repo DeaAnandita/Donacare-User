@@ -8,13 +8,13 @@ import android.widget.Button;
 
 import com.example.donacare.R;
 
-public class InputDonasiActivity extends AppCompatActivity {
+public class InputDonasiBarangActivity extends AppCompatActivity {
     Button btn_inputFoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_donasi);
+        setContentView(R.layout.activity_input_donasi_barang);
         btn_inputFoto= findViewById(R.id.btn_inputFoto_inputDonasi);
         btn_inputFoto.setOnClickListener(new View.OnClickListener() {
             @Override
