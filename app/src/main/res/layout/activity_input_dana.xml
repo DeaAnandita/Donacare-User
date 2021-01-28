@@ -202,7 +202,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         android:text="KIRIM"
-        android:background="@drawable/btn_wa"/>
+        android:background="@drawable/btn_whatsapp"/>
 
 </LinearLayout>
 
