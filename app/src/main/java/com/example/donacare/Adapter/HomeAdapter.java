@@ -16,9 +16,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.donacare.Model.HomeModel;
-import com.example.donacare.PostInfoActivity;
+//import com.example.donacare.PostInfoActivity;
 import com.example.donacare.R;
-import com.example.donacare.UI.Home;
+//import com.example.donacare.UI.Home;
 
 import java.util.ArrayList;
 import java.util.List;

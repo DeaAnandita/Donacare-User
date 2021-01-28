@@ -66,7 +66,7 @@
             <EditText
                 android:textColorHint="@color/colorAccent"
                 android:textColor="@color/colorAccent"
-                android:id="@+id/etJenisBarang"
+                android:id="@+id/et_Jenis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Jenis Barang"
@@ -81,7 +81,7 @@
             android:layout_marginTop="20dp">
 
             <EditText
-                android:id="@+id/etJumlah"
+                android:id="@+id/et_Jumlah"
                 android:textColorHint="@color/colorAccent"
                 android:textColor="@color/colorAccent"
                 android:layout_width="match_parent"
@@ -97,7 +97,7 @@
             android:layout_marginTop="20dp">
 
             <EditText
-                android:id="@+id/etBerat"
+                android:id="@+id/et_Berat"
                 android:textColorHint="@color/colorAccent"
                 android:textColor="@color/colorAccent"
                 android:layout_width="match_parent"
@@ -112,7 +112,7 @@
             android:layout_margin="20dp">
 
             <EditText
-                android:id="@+id/etAlamat"
+                android:id="@+id/et_Alamat"
                 android:textColorHint="@color/colorAccent"
                 android:textColor="@color/colorAccent"
                 android:layout_width="match_parent"
@@ -131,7 +131,7 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/btnKirim"
+            android:id="@+id/btn_Kirim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

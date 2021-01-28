@@ -13,13 +13,14 @@
         <activity android:name=".UI.DetailHome"></activity>
         <activity android:name=".UI.Search" />
         <activity android:name=".UI.SplashActivity">
+
+        </activity>
+        <activity android:name=".UI.InputDonasiActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".UI.InputDonasiActivity">
         </activity>
         <activity android:name=".UI.HomeActivity"></activity>
         <activity android:name=".UI.RegisterActivity" />
@@ -27,5 +28,6 @@
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>
