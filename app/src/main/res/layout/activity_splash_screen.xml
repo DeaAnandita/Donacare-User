@@ -15,11 +15,9 @@
         android:layout_marginTop="80dp"/>
 
     <ImageView
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@mipmap/logo2"
-        android:scaleType="fitXY"/>
+        android:background="@mipmap/logo2"
+        android:layout_marginTop="100dp" />
 
 </RelativeLayout>

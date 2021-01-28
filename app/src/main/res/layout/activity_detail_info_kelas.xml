@@ -5,148 +5,139 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".UI.DonasiJasa">
+    tools:context=".UI.DetailInfoKelasActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_syarat_donasi_jasa"
+        android:id="@+id/toolbar_detail_info_kelas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
     <TextView
-        android:id="@+id/tv_syarat_donasi_jasa"
+        android:id="@+id/tv_nama_kelas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_below="@+id/toolbar_syarat_donasi_jasa"
-        android:text="Syarat Syarat Donasi Jasa :"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_syarat_donasi_jasa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_below="@id/tv_syarat_donasi_jasa"
-        app:cardElevation="5dp"
-        app:cardCornerRadius="4dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_field2"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/txt1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginHorizontal="20dp"
-                android:text="- Mampu dan mau memeberikan jasanya untuk mengajar."
-                android:textSize="15dp"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/txt2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@+id/txt1"
-                android:text="- Usia minimal 20 tahun,maskimal 30 tahun."
-                android:textSize="15dp"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/txt3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_below="@+id/txt2"
-                android:text="- Pendidikan maksimal S1"
-                android:textSize="15dp"
-                android:textColor="@color/black" />
-
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/tv_syarat_berkas_jasa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_below="@+id/cv_syarat_donasi_jasa"
-        android:text="Syarat Berkas :"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"/>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_below="@id/tv_syarat_berkas_jasa"
-        app:cardElevation="5dp"
-        app:cardCornerRadius="4dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_field2"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/txt1_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginHorizontal="20dp"
-                android:text="- Riwayat Hidup/Curiculum Vitae"
-                android:textSize="15dp"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/txt2_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@+id/txt1_1"
-                android:text="- Portofolio"
-                android:textSize="15dp"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/txt3_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@+id/txt2_2"
-                android:text="- Pas Foto"
-                android:textSize="15dp"
-                android:textColor="@color/black" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/btn_daftar_donasi_jasa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/toolbar_detail_info_kelas"
         android:layout_margin="20dp"
-        android:text="Daftar Sekarang"
-        android:textColor="@color/white"/>
+        android:text="Kelas IPA VII"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@color/black"/>
 
+    <ImageView
+        android:id="@+id/img_detail_info_kelas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_nama_kelas"
+        android:layout_marginHorizontal="20dp"
+        android:background="@mipmap/kelas_bg" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_info_jadwal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/img_detail_info_kelas"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_field2"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_jadwal_kelas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:text="Jadwal Pembelajaran"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/txt_info1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_below="@+id/tv_jadwal_kelas"
+                android:text="Senin - Sabtu : 08:00 - 10:00 WIB"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/txt_info2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/txt_info1"
+                android:text="Minggu : Libur"
+                android:textSize="15dp"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_info_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/cv_info_jadwal"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_field2"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_info_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:text="Informasi Link Zoom Pembelajaran"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/tv_info3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_below="@+id/tv_info_link"
+                android:text="Senin : http://LinkZoom/RLNSADH2149jdksa"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_info4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/tv_info3"
+                android:text="Selasa : http://LinkZoom/SFHD293HEJSDA"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

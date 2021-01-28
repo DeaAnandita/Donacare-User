@@ -1,7 +1,6 @@
 package com.example.donacare.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.donacare.Model.HomeModel;
+import com.example.donacare.Model.KelasModel;
 import com.example.donacare.R;
+import com.example.donacare.UI.DetailKelasActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     Context mContext;
     View viewku;
     OnItemClickListener mListener;
+
+    public HomeAdapter(DetailKelasActivity mContext, ArrayList<KelasModel> kelasModels) {
+
+    }
 
     public interface OnItemClickListener {
         void onItemClick(int position);

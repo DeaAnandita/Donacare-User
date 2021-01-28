@@ -1,27 +1,27 @@
 package com.example.donacare.UI;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.donacare.R;
 
 public class DetailHome extends AppCompatActivity {
 
-    Button btnDirect, btn_donasi_detailHome;
+    Button btn_direct_whatsapp, btn_donasi_detailHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_home);
 
-        btn_donasi_detailHome = findViewById(R.id.btn_donasi_detailHome);
-        btnDirect = findViewById(R.id.btn_wa_detailHome);
-        btnDirect.setOnClickListener(new View.OnClickListener() {
+        btn_donasi_detailHome = findViewById(R.id.btn_donasi_sekarang);
+        btn_direct_whatsapp = findViewById(R.id.btn_direct_whatsapp);
+        btn_direct_whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
