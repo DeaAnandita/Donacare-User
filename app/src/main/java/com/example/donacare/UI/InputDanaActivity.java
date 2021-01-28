@@ -117,7 +117,7 @@ public class InputDanaActivity extends AppCompatActivity {
         databaseReference.push().setValue(danaModel);
         progressDialog.dismiss();
 
-        startActivity(new Intent(getApplicationContext(),InputDanaActivity.class));
+        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
     }
 
     @Override
