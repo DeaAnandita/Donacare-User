@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.donacare">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,15 +34,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".UI.InputDonasiBarangActivity"
             android:parentActivityName=".UI.DonasiJasaActivity" />
+
         <activity android:name=".UI.HomeActivity"></activity>
         <activity android:name=".UI.RegisterActivity" />
         <activity android:name=".UI.LoginActivity" />
         <activity
             android:name=".UI.DonasiJasaActivity"
-            android:parentActivityName=".UI.HomeActivity"></activity>
+            android:parentActivityName=".UI.HomeActivity">
+        </activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -50,7 +58,5 @@
                 android:resource="@xml/picker_provider_paths" />
         </provider>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

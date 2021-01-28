@@ -89,12 +89,13 @@ public class InputDonasiJasaActivity extends AppCompatActivity implements IPickR
                 PickImageDialog.build(new PickSetup()).show(getSupportFragmentManager());
             }
         });
+
+
     }
 
         @Override
         public void onPickResult(PickResult r) {
         if (r.getError() == null & foto_CV.equalsIgnoreCase("true")) {
-
             selectedImagePathCV = r.getPath().toString();
             Log.d("test", "onPickResult: " + selectedImagePathCV);
 

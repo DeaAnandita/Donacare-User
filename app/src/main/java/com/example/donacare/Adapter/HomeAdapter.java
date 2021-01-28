@@ -22,6 +22,9 @@ import com.example.donacare.UI.DetailKelasActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+//import com.example.donacare.PostInfoActivity;
+//import com.example.donacare.UI.Home;
+
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> implements Filterable {
 
     private List<HomeModel> dataList;

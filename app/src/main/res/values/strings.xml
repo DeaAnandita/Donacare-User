@@ -3,9 +3,4 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string-array name="PilihanDonasi">
-        <item>Donasi Barang</item>
-        <item>Donasi Dana</item>
-        <item>Donasi Jasa</item>
-    </string-array>
 </resources>
