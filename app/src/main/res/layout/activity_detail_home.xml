@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.DetailHome">
+    tools:context=".UI.DetailHome"
+    android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        />
+        android:background="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lorem Ipsum"
+        android:text="Organisasi Kudus"
         android:textStyle="bold"
         android:textSize="18dp"
         android:textColor="@color/black"
@@ -30,7 +29,7 @@
         android:id="@+id/title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lorem Ipsum"
+        android:text="Kudus"
         android:textSize="14dp"
         android:textColor="@color/black"
         android:layout_marginLeft="20dp"
@@ -43,13 +42,13 @@
         android:layout_marginHorizontal="20dp"
         android:layout_below="@+id/title2"
         android:layout_marginTop="20dp"
-        android:background="@mipmap/img"
+        android:background="@mipmap/img_bg"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit suscipit malesuada. Pellentesque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit suscipit malesuada. Pellentesque "
+        android:text="Delapan kecamatan di Kota Manado, Sulawesi Utara (Sulut) direndam banjir, Jumat (22/1/2021) sekitar pukul 12.00 waktu setempat atau 11.00 WIB. Badan Penanggulangan Bencana Daerah (BPBD) Kota Manado melaporkan hujan sebagai salah satu pemicu terjadinya bencana tersebut."
         android:textColor="@color/colorAccent"
         android:layout_below="@id/imgDetail"
         android:layout_marginHorizontal="20dp"
@@ -62,7 +61,7 @@
         android:layout_above="@+id/btn_donasi_detailHome"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="10dp"
-        android:text="whatsapp"
+        android:text="Hubungi Admin"
         android:textColor="@color/white"
         android:drawableLeft="@mipmap/whatsapp"
          android:background="@color/white"/>

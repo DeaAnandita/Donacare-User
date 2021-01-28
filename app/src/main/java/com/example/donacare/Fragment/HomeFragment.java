@@ -31,6 +31,7 @@ import com.example.donacare.Adapter.ViewPagerAdapter;
 import com.example.donacare.Model.HomeModel;
 import com.example.donacare.R;
 import com.example.donacare.UI.DetailHome;
+import com.example.donacare.UI.DetailKelasActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -47,10 +48,10 @@ public class HomeFragment extends Fragment {
     Toolbar toolbar;
     SearchView searchView;
     ViewPager mViewPager;
-    Button btnLhtSelengkapnya;
+    Button btnLhtSJadwal;
 
     // images array
-    int[] images = {R.drawable.a1, R.drawable.a2};
+    int[] images = {R.mipmap.slider1, R.mipmap.slider2};
 
     // Creating Object of ViewPagerAdapter
     ViewPagerAdapter mViewPagerAdapter;
@@ -65,12 +66,11 @@ public class HomeFragment extends Fragment {
         mViewPager = view.findViewById(R.id.pager);
         recyclerView = view.findViewById(R.id.rvListHome);
 
-
-        btnLhtSelengkapnya = (Button) view.findViewById(R.id.btnLhtSelengkapnya);
-        btnLhtSelengkapnya.setOnClickListener(new View.OnClickListener() {
+        btnLhtSJadwal = view.findViewById(R.id.btnLhtSJadwal);
+        btnLhtSJadwal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), DetailHome.class);
+                Intent intent = new Intent(getActivity(), DetailKelasActivity.class );
                 startActivity(intent);
             }
         });
@@ -100,6 +100,14 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(homeAdapter);
+
+        homeAdapter.setOnItemClickListener(new HomeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(getActivity(), DetailHome.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

@@ -11,20 +11,20 @@
         android:theme="@style/Theme.Donacare">
         <activity android:name=".UI.InputDanaActivity"></activity>
         <activity android:name=".UI.DetailHome"></activity>
-        <activity android:name=".UI.Search" />
         <activity android:name=".UI.SplashActivity">
 
         </activity>
-        <activity android:name=".UI.InputDonasiActivity">
+        <activity android:name=".UI.InputDonasiActivity"/>
+        <activity android:name=".UI.DetailKelasActivity"></activity>
+        <activity android:name=".UI.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.HomeActivity"></activity>
         <activity android:name=".UI.RegisterActivity" />
-        <activity android:name=".UI.MainActivity"></activity>
+        <activity android:name=".UI.LoginActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

@@ -7,9 +7,10 @@ public class AccountModel {
 
     }
 
-    public AccountModel(String nama, String username, String password, String hp, String alamat, String role) {
+    public AccountModel(String nama, String username, String email, String password, String hp, String alamat, String role) {
         this.username = username;
         this.password = password;
+        this.email = email;
         this.nama = nama;
         this.hp = hp;
         this.alamat = alamat;

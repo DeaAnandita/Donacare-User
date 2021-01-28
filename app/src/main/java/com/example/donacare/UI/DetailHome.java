@@ -12,12 +12,14 @@ import com.example.donacare.R;
 
 public class DetailHome extends AppCompatActivity {
 
-    Button btnDirect;
+    Button btnDirect, btn_donasi_detailHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_home);
+
+        btn_donasi_detailHome = findViewById(R.id.btn_donasi_detailHome);
         btnDirect = findViewById(R.id.btn_wa_detailHome);
         btnDirect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,5 +31,14 @@ public class DetailHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn_donasi_detailHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailHome.this, InputDonasiActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

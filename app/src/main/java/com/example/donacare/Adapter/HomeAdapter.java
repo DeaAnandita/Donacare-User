@@ -19,6 +19,7 @@ import com.example.donacare.Model.HomeModel;
 //import com.example.donacare.PostInfoActivity;
 import com.example.donacare.R;
 //import com.example.donacare.UI.Home;
+import com.example.donacare.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,16 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     private List<HomeModel> dataListFull;
     Context mContext;
     View viewku;
+    OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
 
     public HomeAdapter( Context mContext, List<HomeModel> dataList) {
         this.dataList = dataList;
@@ -41,20 +52,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     public HomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         viewku = layoutInflater.inflate(R.layout.list_item, parent, false);
-        return new HomeViewHolder(viewku);
+        return new HomeViewHolder(viewku, mListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
         holder.txtTitle.setText(dataList.get(position).getTitle());
         holder.txtSubtitle.setText(dataList.get(position).getSubtitle());
-//        holder.btnLhtSelengkapnya.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                mContext.startActivity(new Intent(), R.layout.activity_detail_home);
-//            }
-//        });
-
     }
 
     @Override
@@ -68,13 +72,25 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         CardView cardku;
         Button btnLhtSelengkapnya;
 
-        HomeViewHolder(View itemView) {
+        HomeViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
             img = itemView.findViewById(R.id.image);
             btnLhtSelengkapnya = itemView.findViewById(R.id.btnLhtSelengkapnya);
             cardku = itemView.findViewById(R.id.cardku);
             txtTitle = itemView.findViewById(R.id.txtTitle);
             txtSubtitle = itemView.findViewById(R.id.txtSubtitle);
+
+            btnLhtSelengkapnya.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 

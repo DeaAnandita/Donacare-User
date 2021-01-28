@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.donacare.R;
 
-public class Search extends AppCompatActivity {
+public class DetailKelasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_detail_kelas);
     }
 }

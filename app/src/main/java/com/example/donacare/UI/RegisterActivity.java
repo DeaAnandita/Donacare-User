@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText txtUsername, txtName, txtPassword, txtEmail, txtPhone;
+    EditText txtUsername, txtName, txtPassword, txtEmail, txtPhone, txt_address;
     Button btnRegister;
     TextView tvLogin, txtForgotPassword;
     DatabaseReference databaseReference;
@@ -40,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         txtName = findViewById(R.id.txt_name_register);
         txtPassword = findViewById(R.id.txt_password_register);
         txtEmail = findViewById(R.id.txt_email_register);
+        txt_address = findViewById(R.id.txt_address_register);
         txtPhone = findViewById(R.id.txt_phone_register);
 
         progressDialog = new ProgressDialog(this);
@@ -53,11 +54,13 @@ public class RegisterActivity extends AppCompatActivity {
                 correctPassword = true;
                 added = false;
 
-                String mEmail = txtEmail.getText().toString().trim();
-                String mPassword = txtPassword.getText().toString().trim();
-                String mUsername = txtUsername.getText().toString().trim();
-                String mName = txtName.getText().toString().trim();
+                String mEmail = txtEmail.getText().toString();
+                String mPassword = txtPassword.getText().toString();
+                String mUsername = txtUsername.getText().toString();
+                String mName = txtName.getText().toString();
                 String mPhone = txtPhone.getText().toString().trim();
+                String mAddress = txt_address.getText().toString();
+
                 if (TextUtils.isEmpty(mEmail)) {
                     txtEmail.setError("Email tidak boleh kosong.");
                     return;
@@ -76,6 +79,10 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 if (TextUtils.isEmpty(mPhone)) {
                     txtPhone.setError("No. Telp tidak boleh kosong.");
+                    return;
+                }
+                if (TextUtils.isEmpty(mAddress)) {
+                    txtPhone.setError("Alamat tidak boleh kosong.");
                     return;
                 }
                 if (mPassword.length() < 6) {
@@ -112,12 +119,13 @@ public class RegisterActivity extends AppCompatActivity {
                             txtPhone.setError(null);
                             txtEmail.setError(null);
                             txtPassword.setError(null);
+                            txt_address.setError(null);
 
-                            if (mName.trim().isEmpty() || mEmail.trim().isEmpty() || mPassword.trim().isEmpty() || mUsername.trim().isEmpty() || mPhone.trim().isEmpty()) {
+                            if (mName.trim().isEmpty() || mEmail.trim().isEmpty() || mPassword.trim().isEmpty() || mUsername.trim().isEmpty() || mPhone.trim().isEmpty() || mAddress.trim().isEmpty()) {
                                 Toast.makeText(getApplicationContext(), "Isi semua field", Toast.LENGTH_SHORT).show();
                             } else {
                                 added = true;
-                                AccountModel accountModel = new AccountModel(mName, mUsername, mPassword, mPhone, "", "user");
+                                AccountModel accountModel = new AccountModel(mName, mUsername, mEmail, mPassword, mPhone, mAddress, "user");
                                 databaseReference.child(mUsername).setValue(accountModel);
                                 Toast.makeText(getApplicationContext(), "Berhasil didaftarkan!", Toast.LENGTH_SHORT).show();
                                 txtPassword.setText("");
@@ -125,6 +133,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 txtName.setText("");
                                 txtPhone.setText("");
                                 txtUsername.setText("");
+                                txt_address.setText("");
                                 txtUsername.requestFocus();
                             }
                         }
@@ -155,7 +164,7 @@ public class RegisterActivity extends AppCompatActivity {
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
             }
         });
