@@ -21,7 +21,7 @@
                 android:elevation="4dp">
 
                 <include
-                    android:id="@+id/toolbar1"
+                    android:id="@+id/toolbar_home"
                     layout="@layout/my_toolbar" />
             </com.google.android.material.appbar.AppBarLayout>
 
@@ -51,25 +51,25 @@
     </RelativeLayout>
 
         <TextView
-            android:id="@+id/txtKategori"
+            android:id="@+id/tv_Kategori"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kategori"
             android:layout_below="@+id/slidehome"
             android:layout_marginHorizontal="20dp"
+            android:text="Kategori"
             android:textStyle="bold"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/black"
             android:textSize="17dp"/>
 
             <Button
-                android:id="@+id/btnDonasi"
+                android:id="@+id/btnDBarang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="7dp"
                 android:text="Donasi Barang"
                 android:textColor="@color/white"
-                android:layout_below="@+id/txtKategori"/>
+                android:layout_below="@+id/tv_Kategori"/>
 
             <Button
                 android:id="@+id/btnDDana"
@@ -78,8 +78,8 @@
                 android:layout_marginTop="7dp"
                 android:text="Donasi Dana"
                 android:textColor="@color/white"
-                android:layout_toRightOf="@+id/btnDonasi"
-                android:layout_below="@+id/txtKategori"/>
+                android:layout_toRightOf="@+id/btnDBarang"
+                android:layout_below="@+id/tv_Kategori"/>
 
             <Button
                 android:id="@+id/btnDJasa"
@@ -89,18 +89,18 @@
                 android:layout_marginHorizontal="20dp"
                 android:text="Donasi Jasa"
                 android:textColor="@color/white"
-                android:layout_below="@+id/btnDonasi"/>
+                android:layout_below="@+id/btnDBarang"/>
 
             <TextView
                 android:id="@+id/txtJadwalV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Berita Teratas"
                 android:layout_below="@+id/btnDJasa"
                 android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="20dp"
+                android:text="Daftar Kelas"
                 android:textStyle="bold"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/black"
                 android:textSize="17dp"/>
 
             <androidx.cardview.widget.CardView
@@ -148,7 +148,7 @@
                         />
 
                     <Button
-                        android:id="@+id/btnLhtSJadwal"
+                        android:id="@+id/btn_Lihat_Selengkapnya_Jadwal"
                         android:layout_marginBottom="10dp"
                         android:layout_alignParentBottom="true"
                         android:text="Lihat Selengkapnya"
@@ -165,12 +165,12 @@
                 android:id="@+id/txtBerita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Berita Teratas"
                 android:layout_below="@+id/cvJadwalV"
                 android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="20dp"
+                android:text="Berita Teratas"
                 android:textStyle="bold"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/black"
                 android:textSize="17dp"/>
 
     <androidx.recyclerview.widget.RecyclerView

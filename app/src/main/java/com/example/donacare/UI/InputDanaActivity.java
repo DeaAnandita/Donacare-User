@@ -2,6 +2,7 @@ package com.example.donacare.UI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -40,6 +41,7 @@ public class InputDanaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_dana);
+
 
 
         preferences = new Preferences();
@@ -136,5 +138,11 @@ public class InputDanaActivity extends AppCompatActivity {
                 }
             }
         });
+        Toolbar toolbar = findViewById(R.id.toolbarInput);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Donasi Jasa");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }
