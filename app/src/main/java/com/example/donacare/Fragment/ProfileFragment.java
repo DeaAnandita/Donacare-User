@@ -2,17 +2,16 @@ package com.example.donacare.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.example.donacare.Preferences;
 import com.example.donacare.R;
@@ -90,7 +89,7 @@ public class ProfileFragment extends Fragment {
         Log.d("username", username);
         Log.d("name", name);
         Log.d("email", email);
-        Log.d("address", "test: "+address);
+        Log.d("address", "test: " + address);
 
         tv_name = view.findViewById(R.id.tv_name_profile);
         tv_address = view.findViewById(R.id.tv_address_profile);

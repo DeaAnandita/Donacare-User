@@ -93,8 +93,8 @@ public class InputDonasiJasaActivity extends AppCompatActivity implements IPickR
 
     }
 
-        @Override
-        public void onPickResult(PickResult r) {
+    @Override
+    public void onPickResult(PickResult r) {
         if (r.getError() == null & foto_CV.equalsIgnoreCase("true")) {
             selectedImagePathCV = r.getPath().toString();
             Log.d("test", "onPickResult: " + selectedImagePathCV);
@@ -103,20 +103,21 @@ public class InputDonasiJasaActivity extends AppCompatActivity implements IPickR
             img_CV.setImageBitmap(selectedImage);
             foto_CV = "";
 
-        }else if(r.getError() == null & foto_porto.equalsIgnoreCase("true")) {
-                selectedImagePathPorto = r.getPath().toString();
-                Log.d("test", "onPickResult: " + selectedImagePathPorto);
+        } else if (r.getError() == null & foto_porto.equalsIgnoreCase("true")) {
+            selectedImagePathPorto = r.getPath().toString();
+            Log.d("test", "onPickResult: " + selectedImagePathPorto);
 
-                selectedImage = r.getBitmap();
-                img_porto.setImageBitmap(selectedImage);
-                foto_porto = "";
+            selectedImage = r.getBitmap();
+            img_porto.setImageBitmap(selectedImage);
+            foto_porto = "";
 
-        }else if(r.getError() == null & foto_pasfoto.equalsIgnoreCase("true")) {
-                selectedImagePathPorto = r.getPath().toString();
-                Log.d("test", "onPickResult: " + selectedImagePathPasfoto);
+        } else if (r.getError() == null & foto_pasfoto.equalsIgnoreCase("true")) {
+            selectedImagePathPorto = r.getPath().toString();
+            Log.d("test", "onPickResult: " + selectedImagePathPasfoto);
 
-                selectedImage = r.getBitmap();
-                img_pasfoto.setImageBitmap(selectedImage);
-                foto_pasfoto = "";
+            selectedImage = r.getBitmap();
+            img_pasfoto.setImageBitmap(selectedImage);
+            foto_pasfoto = "";
+        }
     }
-}}
+}

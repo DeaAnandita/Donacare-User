@@ -1,18 +1,8 @@
 package com.example.donacare.UI;
 
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,16 +12,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.donacare.Model.AccountModel;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.example.donacare.Model.DanaModel;
-import com.example.donacare.Model.ItemModel;
 import com.example.donacare.Preferences;
 import com.example.donacare.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class InputDonasiDanaActivity extends AppCompatActivity {
 
@@ -68,8 +57,6 @@ public class InputDonasiDanaActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Form Donasi Dana");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-
         String[] ITEMS = {"Dana", "Barang", "Jasa"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ITEMS);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -101,7 +88,7 @@ public class InputDonasiDanaActivity extends AppCompatActivity {
                 noRek = NoRek.getText().toString();
                 atasNama = AtasNama.getText().toString();
 
-                if (nominal.trim().isEmpty()||noRek.trim().isEmpty()||atasNama.trim().isEmpty()) {
+                if (nominal.trim().isEmpty() || noRek.trim().isEmpty() || atasNama.trim().isEmpty()) {
                     Toast.makeText(InputDonasiDanaActivity.this, "Kolom tidak boleh kosong1", Toast.LENGTH_SHORT).show();
                 } else {
                     progressDialog.setMessage("Sending your data...");
@@ -122,7 +109,7 @@ public class InputDonasiDanaActivity extends AppCompatActivity {
         databaseReference.push().setValue(danaModel);
         progressDialog.dismiss();
 
-        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
     }
 
     @Override

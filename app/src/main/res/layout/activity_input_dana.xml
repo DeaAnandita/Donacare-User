@@ -195,8 +195,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
-        android:text="KIRIM"
-        android:background="@drawable/btn_background_retangle"/>
+        android:text="KIRIM"/>
 
 </LinearLayout>
 

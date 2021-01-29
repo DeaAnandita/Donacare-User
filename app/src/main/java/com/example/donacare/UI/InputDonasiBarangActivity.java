@@ -6,7 +6,6 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -60,8 +59,13 @@ public class InputDonasiBarangActivity extends AppCompatActivity implements Easy
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_donasi_barang);
-        btn_inputFoto= findViewById(R.id.btn_inputFoto_inputDonasi);
+        btn_inputFoto = findViewById(R.id.btn_inputFoto_inputDonasi);
 
+        Toolbar toolbar = findViewById(R.id.toolbar_input_barang);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Form Donasi Barang");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
         if (!EasyPermissions.hasPermissions(this, permissions)) {
@@ -79,11 +83,6 @@ public class InputDonasiBarangActivity extends AppCompatActivity implements Easy
         txtJumlahBarang = findViewById(R.id.txtJumlahBarang);
         txtBeratBarang = findViewById(R.id.txtBeratBarang);
         txtAlamatLengkap = findViewById(R.id.txtAlamatLengkap);
-
-        Toolbar toolbar = findViewById(R.id.toolbarInput_Barang);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Form Donasi Barang");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         preferences = new Preferences();
 
@@ -196,7 +195,6 @@ public class InputDonasiBarangActivity extends AppCompatActivity implements Easy
             imageUrl = data.getDataString();
         }
     }
-
 
 
     // Request Permissions

@@ -59,6 +59,7 @@ public class DetailKelasActivity extends AppCompatActivity {
             }
         });
     }
+
     private void getData() {
         kelasModels = new ArrayList<>();
     }

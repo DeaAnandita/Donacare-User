@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.widget.Toolbar;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.donacare.R;
@@ -18,6 +20,12 @@ public class DetailHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_home);
+
+        Toolbar toolbar = findViewById(R.id.toolbar_detail);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Detail Berita");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btn_donasi_detailHome = findViewById(R.id.btn_donasi_sekarang);
         btn_direct_whatsapp = findViewById(R.id.btn_direct_whatsapp);

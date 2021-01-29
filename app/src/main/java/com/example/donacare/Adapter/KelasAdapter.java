@@ -35,7 +35,7 @@ public class KelasAdapter extends RecyclerView.Adapter<KelasAdapter.HomeViewHold
     }
 
 
-    public KelasAdapter( Context mContext, List<KelasModel> dataList) {
+    public KelasAdapter(Context mContext, List<KelasModel> dataList) {
         this.dataList_kelas = dataList;
         this.mContext = mContext;
         dataListFull = new ArrayList<>(dataList);
@@ -60,7 +60,7 @@ public class KelasAdapter extends RecyclerView.Adapter<KelasAdapter.HomeViewHold
         return dataList_kelas.size();
     }
 
-    class HomeViewHolder extends RecyclerView.ViewHolder{
+    class HomeViewHolder extends RecyclerView.ViewHolder {
         private TextView tv_title_kelas, tv_subtitle_kelas;
         private ImageView img_kelas;
         CardView cv_list_kelas;
@@ -77,9 +77,9 @@ public class KelasAdapter extends RecyclerView.Adapter<KelasAdapter.HomeViewHold
             btn_lihat_selengkapnya_kelas.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (listener != null){
+                    if (listener != null) {
                         int position = getAdapterPosition();
-                        if(position != RecyclerView.NO_POSITION){
+                        if (position != RecyclerView.NO_POSITION) {
                             listener.onItemClick(position);
                         }
                     }

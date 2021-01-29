@@ -1,7 +1,7 @@
 package com.example.donacare.Model;
 
 public class DanaModel {
-    private String nominal,noRek,atasNama;
+    private String nominal, noRek, atasNama;
 
     public DanaModel(String nominal, String noRek, String atasNama) {
         this.nominal = nominal;

@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
         btn_Lihat_Selengkapnya_Jadwal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), DetailKelasActivity.class );
+                Intent intent = new Intent(getActivity(), DetailKelasActivity.class);
                 startActivity(intent);
             }
         });
@@ -158,7 +158,7 @@ public class HomeFragment extends Fragment {
                     recyclerView.setAdapter(homeAdapter);
                     homeAdapter.getFilter().filter(nextText);
                     for (HomeModel model : homeModels) {
-                        Log.d("tes", ""+model.getTitle());
+                        Log.d("tes", "" + model.getTitle());
                     }
                 } catch (Exception e) {
                     Log.d("error", "" + e.toString());

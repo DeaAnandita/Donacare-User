@@ -7,7 +7,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,16 +16,17 @@
         android:theme="@style/Theme.Donacare">
         <activity android:name=".UI.DetailInfoKelasActivity"
             android:parentActivityName=".UI.DetailKelasActivity">
-
         </activity>
         <activity
             android:name=".UI.InputDonasiJasaActivity"
-            android:parentActivityName=".UI.DonasiJasaActivity" />
+            android:parentActivityName=".UI.DetailHome" />
         <activity
             android:name=".UI.DetailKelasActivity"
             android:parentActivityName=".UI.HomeActivity" />
-        <activity android:name=".UI.InputDonasiDanaActivity" />
-        <activity android:name=".UI.DetailHome" />
+        <activity android:name=".UI.InputDonasiDanaActivity"
+            android:parentActivityName=".UI.DetailHome"/>
+        <activity android:name=".UI.DetailHome"
+            android:parentActivityName=".UI.HomeActivity" />
         <activity android:name=".UI.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +37,7 @@
 
         <activity
             android:name=".UI.InputDonasiBarangActivity"
-            android:parentActivityName=".UI.DonasiJasaActivity" />
+            android:parentActivityName=".UI.DetailHome"/>
 
         <activity android:name=".UI.HomeActivity"></activity>
         <activity android:name=".UI.RegisterActivity" />

@@ -1,7 +1,7 @@
 package com.example.donacare.Model;
 
 public class ItemModel {
-    private String jenis,jumlah,berat,alamat,imageUrl;
+    private String jenis, jumlah, berat, alamat, imageUrl;
 
     public ItemModel(String jenis, String jumlah, String berat, String alamat, String imageUrl) {
         this.jenis = jenis;
